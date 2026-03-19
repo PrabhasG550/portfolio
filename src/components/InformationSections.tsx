@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from 'framer-motion'
 import type { InformationSection } from '../data/portfolio'
 
 interface InformationSectionsProps {
@@ -9,27 +8,16 @@ interface InformationSectionsProps {
 export function InformationSections({ sections, viewport }: InformationSectionsProps) {
   return (
     <section className={`information-sections information-sections--${viewport}`}>
-      {sections.map((section, index) => (
-        <InformationBlock key={section.label} index={index} section={section} />
+      {sections.map((section) => (
+        <InformationBlock key={section.label} section={section} />
       ))}
     </section>
   )
 }
 
-function InformationBlock({ index, section }: { index: number; section: InformationSection }) {
-  const prefersReducedMotion = useReducedMotion()
-
+function InformationBlock({ section }: { section: InformationSection }) {
   return (
-    <motion.article
-      animate={{ opacity: 1, y: 0 }}
-      className="information-block"
-      initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
-      transition={{
-        duration: prefersReducedMotion ? 0 : 0.55,
-        delay: prefersReducedMotion ? 0 : 0.06 * index,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
+    <article className="information-block">
       <div className="information-block__header">
         <div className="information-block__divider" aria-hidden="true" />
         <p
@@ -64,6 +52,6 @@ function InformationBlock({ index, section }: { index: number; section: Informat
           </div>
         ) : null}
       </div>
-    </motion.article>
+    </article>
   )
 }

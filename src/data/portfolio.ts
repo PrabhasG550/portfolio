@@ -41,7 +41,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'systems-of-calm',
         title: 'Systems Of Calm',
-        details: 'PRODUCT & PACKAGING',
+        details: 'Product & Packaging',
         summary: 'A focus-first operating environment where ambient controls, system states, and quiet motion are treated as packaging for the digital product.',
         year: '2026',
         tags: ['Spatial UI', 'Motion'],
@@ -51,7 +51,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'signal-room',
         title: 'Signal Room',
-        details: 'EDITORIAL & INTERFACE',
+        details: 'Editorial & Interface',
         summary: 'An editorial dashboard language that organizes complex live data into a cinematic sequence of panels, labels, and moments of pause.',
         year: '2025',
         tags: ['Dashboard', 'Brand'],
@@ -61,7 +61,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'latency-atlas',
         title: 'Latency Atlas',
-        details: 'RESEARCH & PROTOTYPE',
+        details: 'Research & Prototype',
         summary: 'A narrative prototype studying how transitions, pacing, and staging can clarify wayfinding in dense product journeys.',
         year: '2024',
         tags: ['Research', 'Prototype'],
@@ -77,7 +77,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'quiet-broadcast',
         title: 'Quiet Broadcast',
-        details: 'IDENTITY & CAMPAIGN',
+        details: 'Identity & Campaign',
         summary: 'A modular campaign system where the identity behaves like a broadcast package across stills, motion, and rollout assets.',
         year: '2026',
         tags: ['Art Direction', 'Identity'],
@@ -87,7 +87,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'material-stories',
         title: 'Material Stories',
-        details: 'EDITORIAL & PACKAGING',
+        details: 'Editorial & Packaging',
         summary: 'An editorial media series built around surface, texture, and close detail so the packaging itself becomes narrative subject matter.',
         year: '2025',
         tags: ['Editorial', 'Campaign'],
@@ -97,7 +97,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'frame-shift',
         title: 'Frame Shift',
-        details: 'MOTION & LAUNCH',
+        details: 'Motion & Launch',
         summary: 'A motion-led launch toolkit designed to make transitions feel tactile, paced, and sharply art directed.',
         year: '2024',
         tags: ['Motion', 'Launch'],
@@ -113,7 +113,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'surface-studies',
         title: 'Surface Studies',
-        details: 'STILL LIFE',
+        details: 'Still Life',
         summary: 'A still-life study focused on texture, edge light, and the emotional charge that appears in quiet material compositions.',
         year: '2026',
         tags: ['Still Life', 'Light'],
@@ -123,7 +123,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'north-window',
         title: 'North Window',
-        details: 'EDITORIAL & PORTRAIT',
+        details: 'Editorial & Portrait',
         summary: 'A photographic essay exploring stillness, shadow, and the soft tonal atmosphere of interior scenes and portrait fragments.',
         year: '2025',
         tags: ['Editorial', 'Portrait'],
@@ -133,7 +133,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'soft-geometry',
         title: 'Soft Geometry',
-        details: 'OBJECTS & INTERIORS',
+        details: 'Objects & Interiors',
         summary: 'A visual archive of objects and interiors composed with measured rhythm, negative space, and a quiet editorial eye.',
         year: '2024',
         tags: ['Objects', 'Interiors'],
@@ -149,7 +149,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'material-gesture',
         title: 'Material Gesture',
-        details: 'INSTALLATION & FORM',
+        details: 'Installation & Form',
         summary: 'A studio body of work documenting how rhythm, material tension, and silhouette can build sculptural presence.',
         year: '2026',
         tags: ['Installation', 'Form'],
@@ -159,7 +159,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'counterweight',
         title: 'Counterweight',
-        details: 'SCULPTURE & MIXED MEDIA',
+        details: 'Sculpture & Mixed Media',
         summary: 'A sculptural series balancing hard and soft matter, using silhouette and counterbalance as the primary design language.',
         year: '2025',
         tags: ['Sculpture', 'Mixed Media'],
@@ -169,7 +169,7 @@ export const portfolioSections: PortfolioSection[] = [
       {
         slug: 'trace-space',
         title: 'Trace / Space',
-        details: 'STUDY & COMPOSITION',
+        details: 'Study & Composition',
         summary: 'A set of visual studies where repetition, interruption, and spatial pause define the overall composition.',
         year: '2024',
         tags: ['Study', 'Composition'],
@@ -185,30 +185,36 @@ export const portfolioInfoSections: InformationSection[] = [
     label: 'Information',
     headingSize: 'caption',
     paragraphs: [
-      'Prabhas Gade is a multi-disciplinary designer based in Dallas whose work focuses on the interaction between form and material.',
+      'Prabhas Gade is a Computer Science student at the University of Texas at Dallas whose passions lie in finding ways to better the world through technology and applying interdisciplinary skills across Human Computer Interaction, finance, medicine, art, and marketing.',
       'Get in contact:',
     ],
     links: [
       { label: portfolioOwner.email, href: `mailto:${portfolioOwner.email}` },
-      { label: 'Instagram', href: 'https://www.instagram.com/' },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-      { label: 'View Resume', href: '#' },
+      { label: 'GitHub', href: 'https://github.com/PrabhasG550' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prabhasgade/' },
+      { label: 'Devpost', href: 'https://devpost.com/prabhasgade777' },
     ],
   },
   {
     label: 'Experience',
     headingSize: 'caption',
     paragraphs: [
-      '2024 - Present: Independent designer shaping experiences across interfaces, campaigns, and visual systems.',
-      '2022 - 2024: Collaborated with product and brand teams to bring interactive stories to market with a focus on motion and craft.',
+      'Software Engineering Intern\nVinson Process Controls, Richardson, TX\n2025',
+      'Software Intern\nAdventurefy, Richardson, TX\n2025',
+      'Frontend Developer\nNextCreator, Dallas, TX\n2024',
+      'Software Engineering Intern\nCodeaify, Dallas, TX\n2024',
+      'Developer\nUTD EPICS Comet Cupboard, Richardson, TX\n2024',
+      'Software Engineering Intern\nJP Morgan Chase, Houston, TX\n2023',
+      'Co-Founder + Lead Teacher\nCSHaven Non-Profit Organization, Sugar Land, TX\n2021 → 2022',
+      'Co-Founder + Vice President\nCoding For Medicine, Sugar Land, TX\n2020 → 2023',
     ],
   },
   {
     label: 'Education',
     headingSize: 'caption',
     paragraphs: [
-      'Studied design through a multidisciplinary lens, combining visual communication, material exploration, and digital prototyping.',
-      'Continuing to expand a practice centered on narrative composition, art direction, and tactile interaction design.',
+      'University of Texas at Dallas — Bachelor of Science in Computer Science, graduating May 2027. Academic Excellence Scholarship Recipient. GPA: 3.5.',
+      'Coursework: Data Structures & Algorithms, Advanced Algorithms & Analysis, Digital Logic, Computer Architecture, Linux/Unix, Discrete Math, Linear Algebra.',
     ],
   },
 ]

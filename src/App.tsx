@@ -1,4 +1,3 @@
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import { DesktopNavigation, MobileMenuOverlay, MobileTopBar, NavigationMenu } from './components/Navigation'
@@ -12,25 +11,21 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <AnimatedRoutes />
+      <AppRoutes />
     </>
   )
 }
 
-function AnimatedRoutes() {
-  const location = useLocation()
-
+function AppRoutes() {
   return (
     <div className="site-shell">
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<HomeScreen />} />
-          <Route path="/category/:slug/:projectSlug" element={<ProjectDetailScreen />} />
-          <Route path="/category/:slug" element={<CategoryScreen />} />
-          <Route path="/info" element={<InformationScreen />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </AnimatePresence>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/category/:slug/:projectSlug" element={<ProjectDetailScreen />} />
+        <Route path="/category/:slug" element={<CategoryScreen />} />
+        <Route path="/info" element={<InformationScreen />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </div>
   )
 }
@@ -46,21 +41,10 @@ function ScrollToTop() {
 }
 
 function ScreenTransition({ children }: { children: React.ReactNode }) {
-  const prefersReducedMotion = useReducedMotion()
-
   return (
-    <motion.main
-      className="screen-root"
-      initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={prefersReducedMotion ? {} : { opacity: 0, y: -12 }}
-      transition={{
-        duration: prefersReducedMotion ? 0 : 0.52,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
+    <main className="screen-root">
       {children}
-    </motion.main>
+    </main>
   )
 }
 
