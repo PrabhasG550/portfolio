@@ -1,0 +1,15 @@
+<svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="130" height="130" rx="21" fill="#111111" />
+  <text
+    x="50%"
+    y="54%"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+    font-size="92"
+    font-weight="400"
+    fill="#f2f2f2"
+  >
+    p
+  </text>
+</svg>
