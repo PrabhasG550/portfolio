@@ -20,6 +20,7 @@ const PILLS: PillItem[] = [
 interface WordRainProps {
   interactive?: boolean
   floorInset?: number
+  usePegboard?: boolean
 }
 
 export function WordRain({ interactive = true, floorInset = 0 }: WordRainProps) {
@@ -161,6 +162,7 @@ export function WordRain({ interactive = true, floorInset = 0 }: WordRainProps) 
         el.style.transform = `translate(${tx}px, ${ty}px) rotate(${body.angle}rad)`
         el.style.opacity = '1'
       })
+
       rafId = requestAnimationFrame(tick)
     }
     rafId = requestAnimationFrame(tick)

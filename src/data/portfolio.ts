@@ -191,8 +191,10 @@ export const portfolioInfoSections: InformationSection[] = [
     links: [
       { label: portfolioOwner.email, href: `mailto:${portfolioOwner.email}` },
       { label: 'GitHub', href: 'https://github.com/PrabhasG550' },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prabhasgade/' },
       { label: 'Devpost', href: 'https://devpost.com/prabhasgade777' },
+      { label: 'Instagram', href: 'https://www.instagram.com/prabhasgade/' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prabhasgade/' },
+
     ],
   },
   {

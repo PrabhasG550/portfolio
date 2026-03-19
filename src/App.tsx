@@ -56,7 +56,7 @@ function HomeScreen() {
         <DesktopNavigation />
         <div className="home-canvas" aria-hidden="true">
           <div className="home-canvas__ambient" />
-          <WordRain />
+          <WordRain usePegboard />
         </div>
       </section>
 
