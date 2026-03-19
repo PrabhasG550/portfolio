@@ -520,10 +520,6 @@ p {
   margin-bottom: 0;
 }
 
-.information-block__paragraph--no-margin {
-  margin-bottom: 0;
-}
-
 .information-block__links {
   display: flex;
   flex-direction: column;

@@ -7,14 +7,14 @@ const PILLS: PillItem[] = [
   { type: 'text', label: 'UI/UX' },
   { type: 'text', label: 'design' },
   { type: 'icon', src: '/favicon.svg' },
-  { type: 'icon', src: '/React-icon.svg' },
-  { type: 'icon', src: '/Typescript_logo_2020.svg' },
-  { type: 'icon', src: '/Python-logo-notext.svg' },
-  { type: 'icon', src: '/Unofficial_JavaScript_logo_2.svg' },
-  { type: 'icon', src: '/java-4-logo-svgrepo-com.svg' },
-  { type: 'icon', src: '/Postgresql_elephant.svg' },
-  { type: 'icon', src: '/mongodb-svgrepo-com.svg' },
-  { type: 'icon', src: '/photo.jpg' },
+  { type: 'icon', src: '/pills/React-icon.svg' },
+  { type: 'icon', src: '/pills/Typescript_logo_2020.svg' },
+  { type: 'icon', src: '/pills/Python-logo-notext.svg' },
+  { type: 'icon', src: '/pills/Unofficial_JavaScript_logo_2.svg' },
+  { type: 'icon', src: '/pills/java-4-logo-svgrepo-com.svg' },
+  { type: 'icon', src: '/pills/Postgresql_elephant.svg' },
+  { type: 'icon', src: '/pills/mongodb-svgrepo-com.svg' },
+  { type: 'icon', src: '/pills/photo.jpg' },
 ]
 
 interface WordRainProps {

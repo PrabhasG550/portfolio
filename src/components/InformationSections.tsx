@@ -32,7 +32,6 @@ function InformationBlock({ section }: { section: InformationSection }) {
         {section.paragraphs.map((paragraph, index) => {
           const isLastParagraph = index === section.paragraphs.length - 1
           const flushAfter = Boolean(section.links?.length) && isLastParagraph
-          const isEducationLead = section.label === 'Education' && index === 0
 
           return (
             <p
@@ -40,7 +39,6 @@ function InformationBlock({ section }: { section: InformationSection }) {
               className={[
                 'information-block__paragraph',
                 flushAfter ? 'information-block__paragraph--flush' : null,
-                isEducationLead ? 'information-block__paragraph--no-margin' : null,
               ]
                 .filter(Boolean)
                 .join(' ')}
