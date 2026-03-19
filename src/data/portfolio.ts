@@ -30,7 +30,7 @@ export interface InformationSection {
 
 export const portfolioOwner = {
   name: 'Prabhas Gade',
-  email: 'prabhasgade333@gmail.com',
+  email: 'PrabhasGade333@gmail.com',
 }
 
 export const portfolioSections: PortfolioSection[] = [
@@ -193,7 +193,9 @@ export const portfolioInfoSections: InformationSection[] = [
       { label: 'GitHub', href: 'https://github.com/PrabhasG550' },
       { label: 'Devpost', href: 'https://devpost.com/prabhasgade777' },
       { label: 'Instagram', href: 'https://www.instagram.com/prabhasgade/' },
+      { label: 'X', href: 'https://x.com/prabhasgade333' },
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prabhasgade/' },
+      { label: 'View Resume', href: '/Prabhas_Gade_Resume_2025.pdf' },
 
     ],
   },
@@ -201,22 +203,22 @@ export const portfolioInfoSections: InformationSection[] = [
     label: 'Experience',
     headingSize: 'caption',
     paragraphs: [
-      'Software Engineering Intern\nVinson Process Controls, Richardson, TX\n2025',
-      'Software Intern\nAdventurefy, Richardson, TX\n2025',
-      'Frontend Developer\nNextCreator, Dallas, TX\n2024',
-      'Software Engineering Intern\nCodeaify, Dallas, TX\n2024',
-      'Developer\nUTD EPICS Comet Cupboard, Richardson, TX\n2024',
-      'Software Engineering Intern\nJP Morgan Chase, Houston, TX\n2023',
-      'Co-Founder + Lead Teacher\nCSHaven Non-Profit Organization, Sugar Land, TX\n2021 → 2022',
-      'Co-Founder + Vice President\nCoding For Medicine, Sugar Land, TX\n2020 → 2023',
+      'Software Engineering Intern\nVinson Process Controls, Richardson, TX\nMay 2025 → Aug 2025',
+      'Software Intern\nAdventurefy, Richardson, TX\nJan 2025 → Mar 2025',
+      'Frontend Developer\nNextCreator, Dallas, TX\nJun 2024 → Sep 2024',
+      'Software Engineering Intern\nCodeaify, Dallas, TX\nJun 2024 → Aug 2024',
+      'Developer\nUTD EPICS Comet Cupboard, Richardson, TX\nJan 2024 → May 2024',
+      'Software Engineering Intern\nJP Morgan Chase, Houston, TX\nJun 2023 → Aug 2023',
+      'Co-Founder + Vice President\nCoding For Medicine, Sugar Land, TX\nAug 2020 → Mar 2023',
+      'Co-Founder + Lead Teacher\nCSHaven Non-Profit Organization, Sugar Land, TX\nOct 2021 → Oct 2022',
     ],
   },
   {
     label: 'Education',
     headingSize: 'caption',
     paragraphs: [
-      'University of Texas at Dallas — Bachelor of Science in Computer Science, graduating May 2027. Academic Excellence Scholarship Recipient. GPA: 3.5.',
-      'Coursework: Data Structures & Algorithms, Advanced Algorithms & Analysis, Digital Logic, Computer Architecture, Linux/Unix, Discrete Math, Linear Algebra.',
+      'University of Texas at Dallas — Bachelor of Science in Computer Science, graduating May 2027.\nAcademic Excellence Scholarship Recipient.\nGPA: 3.5.',
+      'Coursework: Data Structures & Algorithms, Advanced Algorithms & Analysis, Digital Logic, Computer Architecture, Linux/Unix, Discrete Math, Linear Algebra, Databases, Computer Graphics, Computer Networks, Computer Vision.',
     ],
   },
 ]

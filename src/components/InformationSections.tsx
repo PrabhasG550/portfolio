@@ -29,26 +29,51 @@ function InformationBlock({ section }: { section: InformationSection }) {
         </p>
       </div>
       <div className="information-block__body">
-        {section.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+        {section.paragraphs.map((paragraph, index) => {
+          const isLastParagraph = index === section.paragraphs.length - 1
+          const flushAfter = Boolean(section.links?.length) && isLastParagraph
+          const isEducationLead = section.label === 'Education' && index === 0
+
+          return (
+            <p
+              key={paragraph}
+              className={[
+                'information-block__paragraph',
+                flushAfter ? 'information-block__paragraph--flush' : null,
+                isEducationLead ? 'information-block__paragraph--no-margin' : null,
+              ]
+                .filter(Boolean)
+                .join(' ')}
+            >
+              {paragraph}
+            </p>
+          )
+        })}
         {section.links?.length ? (
           <div className="information-block__links">
-            {section.links.map((link) => (
-              <>
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
-                  rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                >
-                  {link.label}
-                </a>
-                {link.label === 'LinkedIn' ? (
-                  <span className="information-block__links-spacer" aria-hidden="true" />
-                ) : null}
-              </>
-            ))}
+            {section.links.map((link) => {
+              const isExternal = link.href.startsWith('http')
+              const isResume = link.label.toLowerCase() === 'view resume' || link.href.toLowerCase().endsWith('.pdf')
+              const shouldNewTab = isExternal || isResume
+
+              return (
+                <div key={link.label}>
+                  {isResume ? (
+                    <span className="information-block__links-spacer" aria-hidden="true" />
+                  ) : null}
+                  <a
+                    href={link.href}
+                    target={shouldNewTab ? '_blank' : undefined}
+                    rel={shouldNewTab ? 'noreferrer' : undefined}
+                  >
+                    {link.label}
+                  </a>
+                  {link.href.startsWith('mailto:') ? (
+                    <span className="information-block__links-spacer" aria-hidden="true" />
+                  ) : null}
+                </div>
+              )
+            })}
           </div>
         ) : null}
       </div>
