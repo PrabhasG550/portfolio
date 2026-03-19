@@ -227,10 +227,62 @@ p {
 .home-canvas__ambient {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background:
     radial-gradient(circle at 78% 20%, rgba(228, 228, 228, 0.8), transparent 24%),
     radial-gradient(circle at 18% 72%, rgba(243, 243, 243, 0.92), transparent 28%),
     linear-gradient(180deg, rgba(247, 247, 247, 0.65), rgba(255, 255, 255, 0));
+}
+
+.word-rain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.word-rain--passive {
+  pointer-events: none;
+}
+
+.word-rain__pill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 18px 42px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: transform;
+  user-select: none;
+}
+
+.word-rain__pill--icon {
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.word-rain__pill--icon img {
+  display: block;
+  object-fit: cover;
+}
+
+.word-rain__pill--photo {
+  border-radius: 16px;
+}
+
+.word-rain__pill--react {
+  padding: 0px;
 }
 
 .safe-area-spacer {
@@ -246,7 +298,14 @@ p {
   height: 50px;
 }
 
+.tablet-home-screen,
+.mobile-home-screen {
+  position: relative;
+}
+
 .tablet-home-layout {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(280px, 480px) minmax(0, 1fr);
   min-height: calc(100vh - 24px);
@@ -281,6 +340,8 @@ p {
 }
 
 .mobile-home-layout {
+  position: relative;
+  z-index: 1;
   min-height: calc(100svh - 50px);
 }
 
