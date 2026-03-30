@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import { DesktopNavigation, MobileMenuOverlay, MobileTopBar, NavigationMenu } from './components/Navigation'
-import { WordRain } from './components/WordRain'
+import { RainIntro } from './components/RainIntro'
+// import { WordRain } from './components/WordRain'
 import { InformationSections } from './components/InformationSections'
 import { ProjectDetail } from './components/ProjectDetail'
 import { ProjectGallery } from './components/ProjectGallery'
@@ -9,9 +10,12 @@ import { MobileStatusBar, TabletStatusBar } from './components/StatusBar'
 import { getSectionBySlug, portfolioInfoSections, portfolioSections } from './data/portfolio'
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true)
+
   return (
     <>
       <ScrollToTop />
+      {showIntro ? <RainIntro onComplete={() => setShowIntro(false)} /> : null}
       <AppRoutes />
     </>
   )
@@ -56,7 +60,7 @@ function HomeScreen() {
         <DesktopNavigation />
         <div className="home-canvas" aria-hidden="true">
           <div className="home-canvas__ambient" />
-          <WordRain />
+          {/* <WordRain /> */}
         </div>
       </section>
 
@@ -66,7 +70,7 @@ function HomeScreen() {
           <NavigationMenu variant="tablet" showInfo />
           <div className="tablet-home-blank" aria-hidden="true" />
         </div>
-        <WordRain interactive={false} floorInset={80} />
+        {/* <WordRain interactive={false} floorInset={80} /> */}
       </section>
 
       <section className="mobile-only mobile-home-screen">
@@ -74,7 +78,7 @@ function HomeScreen() {
         <div className="mobile-home-layout">
           <NavigationMenu variant="mobile" showInfo />
         </div>
-        <WordRain interactive={false} floorInset={80} />
+        {/* <WordRain interactive={false} floorInset={80} /> */}
       </section>
     </ScreenTransition>
   )

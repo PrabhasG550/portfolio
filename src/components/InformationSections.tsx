@@ -17,7 +17,10 @@ export function InformationSections({ sections, viewport }: InformationSectionsP
 
 function InformationBlock({ section }: { section: InformationSection }) {
   return (
-    <article className="information-block">
+    <article
+      className="information-block"
+      data-information-section={section.label}
+    >
       <div className="information-block__header">
         <div className="information-block__divider" aria-hidden="true" />
         <p

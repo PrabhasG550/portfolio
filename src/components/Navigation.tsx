@@ -1,7 +1,16 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { portfolioOwner, portfolioSections, type SectionSlug } from '../data/portfolio'
+import { portfolioSections, type SectionSlug } from '../data/portfolio'
+
+function BrandMark() {
+  return (
+    <span className="brand-mark">
+      <span className="brand-mark__name">Rain Studios</span>
+      <span className="brand-mark__byline">by Prabhas Gade</span>
+    </span>
+  )
+}
 
 interface DesktopNavigationProps {
   activeSection?: SectionSlug
@@ -39,7 +48,7 @@ export function DesktopNavigation({ activeSection, activeProjectSlug, activeInfo
   return (
     <aside className="desktop-navigation">
       <Link className="site-title" to="/">
-        {portfolioOwner.name}
+        <BrandMark />
       </Link>
       <div className="desktop-navigation__stack">
         <SectionLinks
@@ -64,7 +73,7 @@ export function NavigationMenu({ variant, showInfo = false }: NavigationMenuProp
         transition={{ duration: prefersReducedMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <Link className="site-title" to="/">
-          {portfolioOwner.name}
+          <BrandMark />
         </Link>
       </motion.div>
       <SectionLinks interaction="tap" />
@@ -98,7 +107,7 @@ export function MobileTopBar({
   return (
     <header className="mobile-topbar">
       <Link className="site-title mobile-topbar__title" to="/">
-        {portfolioOwner.name}
+        <BrandMark />
       </Link>
       {mode === 'home' ? (
         <motion.div

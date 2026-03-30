@@ -14,7 +14,6 @@ const PILLS: PillItem[] = [
   { type: 'icon', src: '/pills/java-4-logo-svgrepo-com.svg' },
   { type: 'icon', src: '/pills/Postgresql_elephant.svg' },
   { type: 'icon', src: '/pills/mongodb-svgrepo-com.svg' },
-  { type: 'icon', src: '/pills/photo.jpg' },
 ]
 
 interface WordRainProps {
