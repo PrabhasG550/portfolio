@@ -1,4 +1,5 @@
-import type { InformationSection } from '../data/portfolio'
+import { useState } from 'react'
+import { portfolioOwner, type InformationSection } from '../data/portfolio'
 
 interface InformationSectionsProps {
   sections: InformationSection[]
@@ -16,6 +17,18 @@ export function InformationSections({ sections, viewport }: InformationSectionsP
 }
 
 function InformationBlock({ section }: { section: InformationSection }) {
+  const [subject, setSubject] = useState('')
+  const [body, setBody] = useState('')
+  const showContactForm = section.label.toLowerCase() === 'information'
+
+  function sendEmail() {
+    const params = new URLSearchParams()
+    if (subject.trim()) params.set('subject', subject.trim())
+    if (body.trim()) params.set('body', body.trim())
+    const query = params.toString()
+    window.location.href = `mailto:${portfolioOwner.email}${query ? `?${query}` : ''}`
+  }
+
   return (
     <article
       className="information-block"
@@ -76,6 +89,40 @@ function InformationBlock({ section }: { section: InformationSection }) {
               )
             })}
           </div>
+        ) : null}
+
+        {showContactForm ? (
+          <form
+            className="information-contact-form"
+            onSubmit={(e) => {
+              e.preventDefault()
+              sendEmail()
+            }}
+          >
+            <label className="information-contact-form__label">
+              Subject
+              <input
+                className="information-contact-form__input"
+                type="text"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                placeholder="Subject"
+              />
+            </label>
+            <label className="information-contact-form__label">
+              Body
+              <textarea
+                className="information-contact-form__textarea"
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
+                placeholder="Write your message..."
+                rows={6}
+              />
+            </label>
+            <button type="submit" className="information-contact-form__submit">
+              Send
+            </button>
+          </form>
         ) : null}
       </div>
     </article>

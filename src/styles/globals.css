@@ -1085,6 +1085,57 @@ p {
   height: 35px;
 }
 
+.information-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(100%, 680px);
+  margin-top: 28px;
+}
+
+.information-contact-form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.information-contact-form__input,
+.information-contact-form__textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.45;
+  padding: 10px 12px;
+}
+
+.information-contact-form__textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.information-contact-form__submit {
+  align-self: flex-start;
+  padding: 10px 14px;
+  border: 1px solid var(--text);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.information-contact-form__submit:hover {
+  background: #111;
+  color: #fff;
+}
+
 .wiki-page,
 .log-page {
   display: grid;
@@ -1261,6 +1312,49 @@ p {
   letter-spacing: 0;
 }
 
+.lore-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.lore-row {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.lore-row--reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+}
+
+.lore-row--reverse .lore-row__photo-wrap {
+  grid-column: 2;
+}
+
+.lore-row--reverse .lore-row__text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.lore-row__photo-wrap {
+  margin: 0;
+}
+
+.lore-row__photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.lore-row__text {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
 .log-timeline {
   display: flex;
   flex-direction: column;
@@ -1327,15 +1421,13 @@ p {
 
 .project-detail__hero {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* Standardize to the same skeleton rectangle as cards. */
+  aspect-ratio: 1263 / 847;
   position: relative;
   overflow: hidden;
 }
 
-/* Match gallery card ratio for tech projects that use image-only thumbnails (no video). */
-.project-detail__hero--photo-thumb {
-  aspect-ratio: 1263 / 847;
-}
+/* `project-detail__hero` already matches card ratio; keep class for semantics. */
 
 .project-detail--tablet .project-detail__hero,
 .project-detail--mobile .project-detail__hero {
@@ -1523,6 +1615,26 @@ p {
   color: var(--project-text);
 }
 
+/* Per-project shell background override (without requiring thumbnail color extraction). */
+.project-shell--bg.desktop-shell,
+.project-shell--bg.tablet-category-screen,
+.project-shell--bg.mobile-category-screen {
+  min-height: 100vh;
+}
+
+.project-shell--bg .desktop-navigation,
+.project-shell--bg .desktop-content,
+.project-shell--bg .mobile-topbar {
+  background: transparent;
+}
+
+.project-shell--bg .desktop-navigation .section-links__info-inline,
+.project-shell--bg .navigation-menu .section-links__info-inline,
+.project-shell--bg .mobile-menu-overlay .section-links__info-inline {
+  background: transparent;
+  box-shadow: none;
+}
+
 .project-detail__header {
   display: flex;
   align-items: baseline;
@@ -1671,6 +1783,97 @@ p {
   margin: 0;
 }
 
+/* Full-width, vertical stacking (website/screen captures). */
+.project-detail__gallery-grid--stack {
+  grid-template-columns: 1fr;
+}
+
+/* Mosaic layout for editorial photo sets. */
+.project-detail__gallery-grid--mosaic {
+  /* Masonry-style columns so images keep natural aspect ratios. */
+  display: block;
+  column-count: 3;
+  column-gap: 14px;
+}
+
+.project-detail__gallery-grid--mosaic .project-detail__gallery-item {
+  break-inside: avoid;
+  margin: 0 0 14px;
+}
+
+.project-detail__lightbox-trigger {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.project-detail__lightbox-trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.project-detail__lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.82);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.project-detail__lightbox-inner {
+  position: relative;
+  width: min(1100px, 100%);
+  max-height: calc(100vh - 48px);
+  display: grid;
+  place-items: center;
+}
+
+.project-detail__lightbox-img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 120px);
+  object-fit: contain;
+  display: block;
+}
+
+.project-detail__lightbox-close {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.project-detail__lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.project-detail__lightbox-nav--prev {
+  left: -2px;
+}
+
+.project-detail__lightbox-nav--next {
+  right: -2px;
+}
+
 /* Preview UI removed for always-open galleries. */
 
 .project-detail__section-heading {
@@ -1735,8 +1938,8 @@ p {
     padding-inline: 15px;
   }
 
-  .project-detail__gallery-grid {
-    grid-template-columns: 1fr;
+  .project-detail__gallery-grid--mosaic {
+    column-count: 2;
   }
 }
 
@@ -1814,8 +2017,28 @@ p {
     font-size: 16px;
   }
 
-  .project-detail__gallery-grid {
+  .project-detail__gallery-grid--mosaic {
+    column-count: 1;
+  }
+
+  .project-detail__gallery-grid--mosaic .project-detail__gallery-item {
+    margin-bottom: 12px;
+  }
+
+  .lore-row,
+  .lore-row--reverse {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .lore-row--reverse .lore-row__photo-wrap,
+  .lore-row--reverse .lore-row__text {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .lore-row__text {
+    font-size: 18px;
   }
 }
 

@@ -132,14 +132,106 @@ function SectionFigure({ figure }: { figure: ProjectDetailFigure }) {
 }
 
 function SectionGallery({ gallery }: { gallery: ProjectDetailGallery }) {
+  const layout = gallery.layout ?? 'mosaic'
+  const mosaic = layout === 'mosaic'
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+
+  useEffect(() => {
+    if (activeIndex === null) return
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveIndex(null)
+        return
+      }
+      if (!mosaic) return
+      if (e.key === 'ArrowRight') {
+        setActiveIndex((i) => (i === null ? 0 : (i + 1) % gallery.images.length))
+      }
+      if (e.key === 'ArrowLeft') {
+        setActiveIndex((i) =>
+          i === null ? 0 : (i - 1 + gallery.images.length) % gallery.images.length,
+        )
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [activeIndex, gallery.images.length, mosaic])
+
   return (
     <div className="project-detail__gallery">
       {gallery.heading ? <h3 className="project-detail__gallery-heading">{gallery.heading}</h3> : null}
-      <div className="project-detail__gallery-grid">
+      <div className={`project-detail__gallery-grid project-detail__gallery-grid--${layout}`}>
         {gallery.images.map((figure, i) => (
-          <SectionFigure key={`${figure.src}-${i}`} figure={figure} />
+          <div key={`${figure.src}-${i}`} className={layout === 'mosaic' ? 'project-detail__gallery-item' : undefined}>
+            {mosaic ? (
+              <button
+                type="button"
+                className="project-detail__lightbox-trigger"
+                onClick={() => setActiveIndex(i)}
+                aria-label="Open photo"
+              >
+                <SectionFigure figure={figure} />
+              </button>
+            ) : (
+              <SectionFigure figure={figure} />
+            )}
+          </div>
         ))}
       </div>
+
+      {mosaic && activeIndex !== null ? (
+        <div
+          className="project-detail__lightbox"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setActiveIndex(null)}
+        >
+          <div className="project-detail__lightbox-inner" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="project-detail__lightbox-close"
+              onClick={() => setActiveIndex(null)}
+              aria-label="Close"
+            >
+              Close
+            </button>
+            <img
+              className="project-detail__lightbox-img"
+              src={gallery.images[activeIndex]?.src}
+              alt=""
+              decoding="async"
+            />
+            {gallery.images.length > 1 ? (
+              <>
+                <button
+                  type="button"
+                  className="project-detail__lightbox-nav project-detail__lightbox-nav--prev"
+                  onClick={() =>
+                    setActiveIndex((i) =>
+                      i === null ? 0 : (i - 1 + gallery.images.length) % gallery.images.length,
+                    )
+                  }
+                  aria-label="Previous"
+                >
+                  Prev
+                </button>
+                <button
+                  type="button"
+                  className="project-detail__lightbox-nav project-detail__lightbox-nav--next"
+                  onClick={() =>
+                    setActiveIndex((i) => (i === null ? 0 : (i + 1) % gallery.images.length))
+                  }
+                  aria-label="Next"
+                >
+                  Next
+                </button>
+              </>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }

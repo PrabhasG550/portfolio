@@ -273,6 +273,7 @@ function ProjectDetailScreen() {
     !project?.disableThumbnailShellTheme &&
     !thumbFailed
   const themeStyle = useProjectDetailTheme(project?.thumbnailSrc, themeEnabled)
+  const hasShellBackground = Boolean(project?.shellBackgroundColor)
   const themed =
     Boolean(project?.useTechnologyPresentation) &&
     Boolean(project?.thumbnailSrc) &&
@@ -285,12 +286,25 @@ function ProjectDetailScreen() {
   }
 
   const shellThemed = themed ? ' project-shell--themed' : ''
-  const shellStyle = themed ? themeStyle : undefined
+  const shellBackgroundClass = hasShellBackground ? ' project-shell--bg' : ''
+  const shellStyle = themed
+    ? {
+        ...themeStyle,
+        ...(project?.shellBackgroundColor
+          ? {
+              '--project-surface': project.shellBackgroundColor,
+              backgroundColor: project.shellBackgroundColor,
+            }
+          : {}),
+      }
+    : project?.shellBackgroundColor
+      ? { backgroundColor: project.shellBackgroundColor }
+      : undefined
   const inProgressProject = project.navCategory === 'in-progress'
 
   return (
     <ScreenTransition>
-      <section className={`desktop-only desktop-shell${shellThemed}`} style={shellStyle}>
+      <section className={`desktop-only desktop-shell${shellThemed}${shellBackgroundClass}`} style={shellStyle}>
         <DesktopNavigation
           activeWork={!inProgressProject}
           activeInProgress={inProgressProject}
@@ -307,7 +321,7 @@ function ProjectDetailScreen() {
         </div>
       </section>
 
-      <section className={`tablet-only tablet-category-screen${shellThemed}`} style={shellStyle}>
+      <section className={`tablet-only tablet-category-screen${shellThemed}${shellBackgroundClass}`} style={shellStyle}>
         <TabletStatusBar />
         <MobileTopBar menuOpen={menuOpen} onToggle={() => setMenuOpen((o) => !o)} />
         <ProjectDetail
@@ -326,7 +340,7 @@ function ProjectDetailScreen() {
         />
       </section>
 
-      <section className={`mobile-only mobile-category-screen${shellThemed}`} style={shellStyle}>
+      <section className={`mobile-only mobile-category-screen${shellThemed}${shellBackgroundClass}`} style={shellStyle}>
         <MobileStatusBar />
         <MobileTopBar menuOpen={menuOpen} onToggle={() => setMenuOpen((o) => !o)} />
         <ProjectDetail

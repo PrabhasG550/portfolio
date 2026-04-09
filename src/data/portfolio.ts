@@ -26,6 +26,7 @@ export interface ProjectDetailGallery {
   heading?: string
   buttonLabel?: string
   expandable?: boolean
+  layout?: 'mosaic' | 'stack'
   images: ProjectDetailFigure[]
 }
 
@@ -58,6 +59,8 @@ export interface ProjectEntry {
   detailSections?: ProjectDetailSection[]
   /** Public URL (from site root) for cover / card image — used heavily in Technology. */
   thumbnailSrc?: string
+  /** Optional shell background override for the detail page. */
+  shellBackgroundColor?: string
   /** When true, skip dominant-color shell theming (keep default white/black UI) while still using `thumbnailSrc` for the hero/card. */
   disableThumbnailShellTheme?: boolean
 }
@@ -530,7 +533,7 @@ export const portfolioProjects: ProjectEntry[] = [
         summary:
           'Poetry by Zenah I., shot and styled on set, with site and article design for Indigo’s serial issue—print sensibility translated into a React article on indigomagazinetx.com.',
         year: '2025',
-        tags: ['Print', 'Layout', 'React'],
+        tags: ['Creative Direction', 'Styling', 'Photography', 'Graphics', 'Web design'],
         externalLinks: [
           {
             label: 'Read the piece (Indigo OS serial)',
@@ -542,6 +545,7 @@ export const portfolioProjects: ProjectEntry[] = [
           },
         ],
         thumbnailSrc: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775669782/starflyer67_wba9o3.webp',
+        shellBackgroundColor: '#d7e3e4',
         artwork:
           'linear-gradient(150deg, #dbdbdb 0%, #d4d4d4 42%, #f1f1f1 100%), radial-gradient(circle at 18% 25%, rgba(255,255,255,0.7), transparent 32%), radial-gradient(circle at 84% 70%, rgba(66,76,96,0.16), transparent 34%)',
         detailSections: [
@@ -554,6 +558,7 @@ export const portfolioProjects: ProjectEntry[] = [
             galleries: [
               {
                 heading: 'Issue gallery',
+                layout: 'stack',
                 images: [
                   {
                     src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775669781/indigoos2_bxsb6a.webp',
@@ -569,6 +574,7 @@ export const portfolioProjects: ProjectEntry[] = [
                 heading: 'ShootFolder',
                 buttonLabel: 'Open Shoot Gallery',
                 expandable: true,
+                layout: 'mosaic',
                 images: [
                   {
                     src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775708783/WIP_qp8lih.webp',
@@ -658,7 +664,7 @@ export const portfolioProjects: ProjectEntry[] = [
               'Shot and styled by Zenah I. and Prabhas Gade.',
               'Web design by Prabhas Gade and Aaron C.',
               'Graphics by Prabhas Gade and Tanishka Y.',
-              'Modeled by Sachhyam, Daniel, Noor, and Alexandria.',
+              'Modeled by Ethan, Zenah, Prabhas, Sachhyam, Daniel, Noor, and Alexandria.',
             ],
           },
         ],
@@ -667,15 +673,134 @@ export const portfolioProjects: ProjectEntry[] = [
         slug: 'indigo-how-to-ruin-a-first-date',
         title: 'Indigo Magazine: How to Ruin a First Date',
         disciplines: ['art', 'technology', 'media'],
-        summary: 'Narrative editorial piece produced for Indigo Magazine.',
+        useTechnologyPresentation: true,
+        summary:
+          'A narrative editorial produced for Indigo: creative direction and a photo-driven article experience on the web, built to read with magazine pacing rather than a generic template.',
         year: '2024',
-        tags: ['Print', 'Layout'],
+        tags: ['Creative direction', 'Styling', 'Photography', 'Graphics', 'Web design'],
+        externalLinks: [
+          {
+            label: 'Read the piece',
+            href: 'https://indigomagazinetx.com/articles/how-to-ruin-a-first-date',
+          },
+          {
+            label: 'Indigo Magazine TX',
+            href: 'https://indigomagazinetx.com/',
+          },
+        ],
+        thumbnailSrc: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717374/thumbnail_cy16pq.png',
+        shellBackgroundColor: '#e7e3df',
         artwork:
           'linear-gradient(145deg, #d8d8d8 0%, #cfd2d8 44%, #f4f4f4 100%), radial-gradient(circle at 78% 22%, rgba(255,255,255,0.72), transparent 30%), radial-gradient(circle at 24% 82%, rgba(34,42,56,0.13), transparent 36%)',
+        detailSections: [
+          {
+            heading: 'Editorial & build',
+            paragraphs: [
+              'I coded the article site and contributed photography. With Luis Alarcon, I built an architecture that makes later Indigo articles faster to ship: custom reusable components designed for editorial pacing, not one-off pages.',
+              'For this first article, I built a `PhotoGallery` component that could be reused on later articles whenever the story called for a photo set—keeping layout and behavior consistent across pieces.',
+            ],
+            galleries: [
+              {
+                heading: 'Issue gallery',
+                layout: 'stack',
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717403/IssueGallery1_egmg8n.png',
+                    caption: 'Article / website screen capture.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717489/issuegallery2_xwcpg3.png',
+                    caption: 'Article / website screen capture.',
+                  },
+                ],
+              },
+              {
+                heading: 'My photos',
+                layout: 'mosaic',
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717237/1-IMG_0131_tjynls.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717238/2-IMG_0144_vsmc1g.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717216/3-IMG_0127_yo66z2.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717231/4-IMG_0142_ftroi0.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717219/5-IMG_0126_pctsxq.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717221/6-IMG_0109_k7lsiy.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717217/7-IMG_0140_m2hfgk.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717226/8-IMG_0139_rxdvpa.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717223/9-IMG_0166_muzzno.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717228/10-IMG_0163_efzlxn.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717230/11-IMG_0150_qusc4h.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717224/12-IMG_0112_wvmrtc.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717233/13-IMG_0159_hnal5u.jpg',
+                    caption: 'Shoot still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775717235/14-IMG_0111_sclbhk.jpg',
+                    caption: 'Shoot still.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            heading: 'Writing',
+            paragraphs: [
+              'Full article writing lives on Indigo (see link above). This entry focuses on the editorial build and the visual system that made later articles reusable.',
+            ],
+          },
+          {
+            heading: 'Credits',
+            paragraphs: [
+              'Designed by Luis Alarcon and Prabhas Gade.',
+              'Photographed by Sruja Peruka, Luis Alarcon, and Prabhas Gade.',
+              'Graphics and creative direction by Sreya Iyer.',
+              'Styling by Troy Tran and Faatma Javed.',
+              'Quiz by Zenah Itani.',
+              'Socials and events by Alaynna Nsengiyumva, Anna Smith, and Troy Tran.',
+              'Models: Lily, Kat, Alyssa, and Aarya.',
+            ],
+          },
+        ],
       },
       {
         slug: 'thirdspacedigital-wings4gold',
-        title: 'ThirdSpaceDigital: Wings4Gold',
+        title: 'Wings Shortfilm',
         navCategory: 'in-progress',
         disciplines: ['art', 'media'],
         summary: 'Creative media developed for the ThirdSpaceDigital Wings4Gold campaign.',
@@ -683,6 +808,51 @@ export const portfolioProjects: ProjectEntry[] = [
         tags: ['Campaign', 'Social'],
         artwork:
           'linear-gradient(155deg, #d9d9d9 0%, #d2d4d8 38%, #f4f4f4 100%), radial-gradient(circle at 78% 18%, rgba(255,255,255,0.75), transparent 30%), radial-gradient(circle at 20% 80%, rgba(54,64,78,0.15), transparent 34%)',
+      },
+      {
+        slug: 'canard-shortfilm',
+        title: 'Canard Shortfilm',
+        navCategory: 'in-progress',
+        disciplines: ['art', 'media'],
+        summary: 'Short film currently in progress.',
+        year: '2026',
+        tags: ['Film'],
+        artwork:
+          'linear-gradient(145deg, #d8d8d8 0%, #d3d5d7 34%, #efefef 100%), radial-gradient(circle at 72% 22%, rgba(255,255,255,0.76), transparent 32%), radial-gradient(circle at 26% 74%, rgba(52,60,68,0.13), transparent 34%)',
+      },
+      {
+        slug: 'pingutography',
+        title: 'Pingutography',
+        navCategory: 'in-progress',
+        disciplines: ['art', 'media'],
+        summary: 'Photography playground.',
+        year: '2026',
+        tags: ['Photography'],
+        externalLinks: [
+          {
+            label: '@pingutography',
+            href: 'https://www.instagram.com/pingutography/',
+          },
+        ],
+        artwork:
+          'linear-gradient(150deg, #d9d9d9 0%, #d2d5db 40%, #f3f4f6 100%), radial-gradient(circle at 78% 28%, rgba(255,255,255,0.65), transparent 28%), radial-gradient(circle at 20% 88%, rgba(60,76,92,0.16), transparent 35%)',
+      },
+      {
+        slug: 'seven00hills',
+        title: 'Seven00hills',
+        navCategory: 'in-progress',
+        disciplines: ['art', 'media'],
+        summary: 'Music project.',
+        year: '2026',
+        tags: ['Music'],
+        externalLinks: [
+          {
+            label: '@seven00hills',
+            href: 'https://www.instagram.com/seven00hills/',
+          },
+        ],
+        artwork:
+          'linear-gradient(145deg, #d8d8d8 0%, #d3d5d7 34%, #efefef 100%), radial-gradient(circle at 72% 22%, rgba(255,255,255,0.76), transparent 32%), radial-gradient(circle at 26% 74%, rgba(52,60,68,0.13), transparent 34%)',
       },
       {
         slug: 'seven00hills-torn-mv',
@@ -709,10 +879,11 @@ export const portfolioProjects: ProjectEntry[] = [
       {
         slug: 'album-cover-paintings',
         title: 'Album Cover Paintings',
+        navCategory: 'in-progress',
         disciplines: ['art'],
         summary: 'A set of paintings developed as visual concepts for album cover artwork.',
         year: '2024',
-        tags: ['Acrylic', 'Oil'],
+        tags: ['Acrylic'],
         artwork:
           'linear-gradient(145deg, #d7d7d7 0%, #d1d3d7 40%, #f3f3f3 100%), radial-gradient(circle at 70% 20%, rgba(255,255,255,0.72), transparent 32%), radial-gradient(circle at 30% 82%, rgba(42,54,69,0.13), transparent 34%)',
       },
@@ -720,11 +891,50 @@ export const portfolioProjects: ProjectEntry[] = [
         slug: 'rain-dancing',
         title: 'RainDancing',
         disciplines: ['art', 'media'],
-        summary: 'An art series centered on movement, rhythm, and atmospheric visual storytelling.',
+        useTechnologyPresentation: true,
+        summary:
+          'RainDancing turns strong emotions into mini experiences on canvas, with each piece paired to music and process experiments like gravity painting.',
         year: '2024',
-        tags: ['Mixed media'],
+        tags: ['Painting', 'Music', 'Mixed media'],
+        externalLinks: [
+          {
+            label: 'RainDancing Instagram',
+            href: 'https://www.instagram.com/userjsjsjsjsjsjs333/?hl=en',
+          },
+        ],
+        thumbnailSrc: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775719783/thumbnail_f6ajoq.jpg',
+        shellBackgroundColor: '#d3dbde',
         artwork:
           'linear-gradient(135deg, #d6d6d6 0%, #d0d2d8 40%, #f4f4f4 100%), radial-gradient(circle at 18% 24%, rgba(255,255,255,0.76), transparent 32%), radial-gradient(circle at 82% 76%, rgba(36,46,60,0.14), transparent 32%)',
+        detailSections: [
+          {
+            heading: 'Concept',
+            paragraphs: [
+              'RainDancing revolves around translating strong emotions into compact, immersive painting experiences. The posted works are artifacts of that process rather than isolated images.',
+              'Each painting is paired with music as part of the piece itself, not as background. In some works, I use gravity painting by mixing water with paint to shape flow and texture.',
+            ],
+            galleries: [
+              {
+                heading: 'Works',
+                layout: 'stack',
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775719788/raindancing1_ycsv3h.png',
+                    caption: 'RainDancing work 1.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775719786/raindancing2_mdkq3q.png',
+                    caption: 'RainDancing work 2.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775719866/raindancing3_umeeth.png',
+                    caption: 'RainDancing work 3.',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
 ]
 
@@ -733,7 +943,7 @@ export const portfolioInfoSections: InformationSection[] = [
     label: 'Information',
     headingSize: 'caption',
     paragraphs: [
-      'Prabhas Gade is a Computer Science student at the University of Texas at Dallas whose passions lie in finding ways to better the world through technology and applying interdisciplinary skills across Human Computer Interaction, finance, medicine, art, and marketing.',
+      'Prabhas Gade is a Computer Science student at the University of Texas at Dallas whose passions lie in finding ways to better the world through technology and applying interdisciplinary skills across Human Computer Interaction, media, medicine, art, and marketing.',
       'Get in contact:',
     ],
     links: [

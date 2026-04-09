@@ -676,7 +676,7 @@ function SectionLinks({
           onClick={onNavigate}
           to="/wiki"
         >
-          Log
+          Lore
         </Link>
       </motion.div>
       <motion.div
