@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
+import { useEffect, useMemo, useState } from 'react'
+import { Navigate, Route, Routes, useLocation, useParams, useSearchParams } from 'react-router-dom'
 import { DesktopNavigation, MobileMenuOverlay, MobileTopBar, NavigationMenu } from './components/Navigation'
 import { RainIntro } from './components/RainIntro'
 // import { WordRain } from './components/WordRain'
@@ -7,7 +7,18 @@ import { InformationSections } from './components/InformationSections'
 import { ProjectDetail } from './components/ProjectDetail'
 import { ProjectGallery } from './components/ProjectGallery'
 import { MobileStatusBar, TabletStatusBar } from './components/StatusBar'
-import { getSectionBySlug, portfolioInfoSections, portfolioSections } from './data/portfolio'
+import { StudioLogPage } from './components/StudioLogPage'
+import {
+  getProjectBySlug,
+  portfolioInfoSections,
+  portfolioProjects,
+  type Discipline,
+} from './data/portfolio'
+import { useProjectDetailTheme } from './hooks/useProjectDetailTheme'
+import {
+  parseDisciplinesFromSearch,
+  toggleDisciplineInSearchParams,
+} from './lib/workFilterSearchParams'
 
 function App() {
   const [showIntro, setShowIntro] = useState(true)
@@ -26,9 +37,14 @@ function AppRoutes() {
     <div className="site-shell">
       <Routes>
         <Route path="/" element={<HomeScreen />} />
-        <Route path="/category/:slug/:projectSlug" element={<ProjectDetailScreen />} />
-        <Route path="/category/:slug" element={<CategoryScreen />} />
+        <Route path="/work" element={<WorkScreen />} />
+        <Route path="/work/:projectSlug" element={<ProjectDetailScreen />} />
+        <Route path="/in-progress" element={<InProgressScreen />} />
+        <Route path="/in-progress/:projectSlug" element={<ProjectDetailScreen />} />
+        <Route path="/category/:slug/:projectSlug" element={<LegacyProjectRedirect />} />
+        <Route path="/category/:slug" element={<LegacyCategoryRedirect />} />
         <Route path="/info" element={<InformationScreen />} />
+        <Route path="/wiki" element={<WikiScreen />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
@@ -57,10 +73,9 @@ function HomeScreen() {
   return (
     <ScreenTransition>
       <section className="desktop-only desktop-shell home-screen">
-        <DesktopNavigation />
-        <div className="home-canvas" aria-hidden="true">
-          <div className="home-canvas__ambient" />
-          {/* <WordRain /> */}
+        <DesktopNavigation activeWiki />
+        <div className="desktop-content">
+          <StudioLogPage viewport="desktop" />
         </div>
       </section>
 
@@ -97,31 +112,58 @@ function useMenuLock(menuOpen: boolean) {
   }, [menuOpen])
 }
 
-function CategoryScreen() {
-  const { slug = '' } = useParams()
-  const section = getSectionBySlug(slug)
+function LegacyCategoryRedirect() {
+  return <Navigate to="/work" replace />
+}
+
+function LegacyProjectRedirect() {
+  const { projectSlug = '' } = useParams()
+  const project = getProjectBySlug(projectSlug)
+  if (!project) {
+    return <Navigate to="/work" replace />
+  }
+  return <Navigate to={`${project.navCategory === 'in-progress' ? '/in-progress' : '/work'}/${projectSlug}`} replace />
+}
+
+function WorkScreen() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [searchParams, setSearchParams] = useSearchParams()
   useMenuLock(menuOpen)
 
-  if (!section) {
-    return <Navigate to={`/category/${portfolioSections[0].slug}`} replace />
+  const disciplineKey = searchParams.toString()
+  const selectedDisciplines = useMemo(
+    () => parseDisciplinesFromSearch(searchParams),
+    [disciplineKey],
+  )
+
+  const visibleProjects = useMemo(() => {
+    const workOnly = portfolioProjects.filter((p) => p.navCategory !== 'in-progress')
+    if (selectedDisciplines.length === 0) return workOnly
+    return workOnly.filter((p) => selectedDisciplines.every((d) => p.disciplines.includes(d)))
+  }, [selectedDisciplines])
+
+  function toggleDiscipline(d: Discipline) {
+    setSearchParams(toggleDisciplineInSearchParams(searchParams, d), { replace: true })
   }
+
+  const workDisciplineFilters = { selected: selectedDisciplines, onToggle: toggleDiscipline }
 
   return (
     <ScreenTransition>
       <section className="desktop-only desktop-shell category-screen">
-        <DesktopNavigation activeSection={section.slug} />
+        <DesktopNavigation activeWork workDisciplineFilters={workDisciplineFilters} />
         <div className="desktop-content">
-          <ProjectGallery projects={section.projects} sectionSlug={section.slug} viewport="desktop" />
+          <ProjectGallery projects={visibleProjects} viewport="desktop" />
         </div>
       </section>
 
       <section className="tablet-only tablet-category-screen">
         <TabletStatusBar />
         <MobileTopBar menuOpen={menuOpen} onToggle={() => setMenuOpen((o) => !o)} />
-        <ProjectGallery projects={section.projects} sectionSlug={section.slug} viewport="tablet" />
+        <ProjectGallery projects={visibleProjects} viewport="tablet" />
         <MobileMenuOverlay
-          activeSection={section.slug}
+          activeWork
+          workDisciplineFilters={workDisciplineFilters}
           open={menuOpen}
           onClose={() => setMenuOpen(false)}
         />
@@ -130,9 +172,69 @@ function CategoryScreen() {
       <section className="mobile-only mobile-category-screen">
         <MobileStatusBar />
         <MobileTopBar menuOpen={menuOpen} onToggle={() => setMenuOpen((o) => !o)} />
-        <ProjectGallery projects={section.projects} sectionSlug={section.slug} viewport="mobile" />
+        <ProjectGallery projects={visibleProjects} viewport="mobile" />
         <MobileMenuOverlay
-          activeSection={section.slug}
+          activeWork
+          workDisciplineFilters={workDisciplineFilters}
+          open={menuOpen}
+          onClose={() => setMenuOpen(false)}
+        />
+      </section>
+    </ScreenTransition>
+  )
+}
+
+function InProgressScreen() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [searchParams, setSearchParams] = useSearchParams()
+  useMenuLock(menuOpen)
+
+  const disciplineKey = searchParams.toString()
+  const selectedDisciplines = useMemo(
+    () => parseDisciplinesFromSearch(searchParams),
+    [disciplineKey],
+  )
+
+  const visibleProjects = useMemo(() => {
+    const inProgress = portfolioProjects.filter((p) => p.navCategory === 'in-progress')
+    if (selectedDisciplines.length === 0) return inProgress
+    return inProgress.filter((p) => selectedDisciplines.every((d) => p.disciplines.includes(d)))
+  }, [selectedDisciplines])
+
+  function toggleDiscipline(d: Discipline) {
+    setSearchParams(toggleDisciplineInSearchParams(searchParams, d), { replace: true })
+  }
+
+  const workDisciplineFilters = { selected: selectedDisciplines, onToggle: toggleDiscipline }
+
+  return (
+    <ScreenTransition>
+      <section className="desktop-only desktop-shell category-screen">
+        <DesktopNavigation activeInProgress workDisciplineFilters={workDisciplineFilters} />
+        <div className="desktop-content">
+          <ProjectGallery projects={visibleProjects} viewport="desktop" />
+        </div>
+      </section>
+
+      <section className="tablet-only tablet-category-screen">
+        <TabletStatusBar />
+        <MobileTopBar menuOpen={menuOpen} onToggle={() => setMenuOpen((o) => !o)} />
+        <ProjectGallery projects={visibleProjects} viewport="tablet" />
+        <MobileMenuOverlay
+          activeInProgress
+          workDisciplineFilters={workDisciplineFilters}
+          open={menuOpen}
+          onClose={() => setMenuOpen(false)}
+        />
+      </section>
+
+      <section className="mobile-only mobile-category-screen">
+        <MobileStatusBar />
+        <MobileTopBar menuOpen={menuOpen} onToggle={() => setMenuOpen((o) => !o)} />
+        <ProjectGallery projects={visibleProjects} viewport="mobile" />
+        <MobileMenuOverlay
+          activeInProgress
+          workDisciplineFilters={workDisciplineFilters}
           open={menuOpen}
           onClose={() => setMenuOpen(false)}
         />
@@ -142,44 +244,102 @@ function CategoryScreen() {
 }
 
 function ProjectDetailScreen() {
-  const { slug = '', projectSlug = '' } = useParams()
-  const section = getSectionBySlug(slug)
-  const project = section?.projects.find((p) => p.slug === projectSlug)
+  const { projectSlug = '' } = useParams()
+  const project = getProjectBySlug(projectSlug)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [thumbFailed, setThumbFailed] = useState(false)
+  const [searchParams, setSearchParams] = useSearchParams()
   useMenuLock(menuOpen)
 
-  if (!section || !project) {
-    return <Navigate to={section ? `/category/${section.slug}` : '/'} replace />
+  const disciplineKey = searchParams.toString()
+  const selectedDisciplines = useMemo(
+    () => parseDisciplinesFromSearch(searchParams),
+    [disciplineKey],
+  )
+
+  function toggleDiscipline(d: Discipline) {
+    setSearchParams(toggleDisciplineInSearchParams(searchParams, d), { replace: true })
   }
+
+  const workDisciplineFilters = { selected: selectedDisciplines, onToggle: toggleDiscipline }
+
+  useEffect(() => {
+    setThumbFailed(false)
+  }, [projectSlug])
+
+  const themeEnabled =
+    Boolean(project?.useTechnologyPresentation) &&
+    Boolean(project?.thumbnailSrc) &&
+    !project?.disableThumbnailShellTheme &&
+    !thumbFailed
+  const themeStyle = useProjectDetailTheme(project?.thumbnailSrc, themeEnabled)
+  const themed =
+    Boolean(project?.useTechnologyPresentation) &&
+    Boolean(project?.thumbnailSrc) &&
+    !project?.disableThumbnailShellTheme &&
+    !thumbFailed &&
+    Object.keys(themeStyle).length > 0
+
+  if (!project) {
+    return <Navigate to="/work" replace />
+  }
+
+  const shellThemed = themed ? ' project-shell--themed' : ''
+  const shellStyle = themed ? themeStyle : undefined
+  const inProgressProject = project.navCategory === 'in-progress'
 
   return (
     <ScreenTransition>
-      <section className="desktop-only desktop-shell">
-        <DesktopNavigation activeSection={section.slug} activeProjectSlug={project.slug} />
+      <section className={`desktop-only desktop-shell${shellThemed}`} style={shellStyle}>
+        <DesktopNavigation
+          activeWork={!inProgressProject}
+          activeInProgress={inProgressProject}
+          activeProjectSlug={project.slug}
+          workDisciplineFilters={workDisciplineFilters}
+        />
         <div className="desktop-content">
-          <ProjectDetail project={project} viewport="desktop" />
+          <ProjectDetail
+            project={project}
+            viewport="desktop"
+            thumbFailed={thumbFailed}
+            onThumbnailError={() => setThumbFailed(true)}
+          />
         </div>
       </section>
 
-      <section className="tablet-only tablet-category-screen">
+      <section className={`tablet-only tablet-category-screen${shellThemed}`} style={shellStyle}>
         <TabletStatusBar />
         <MobileTopBar menuOpen={menuOpen} onToggle={() => setMenuOpen((o) => !o)} />
-        <ProjectDetail project={project} viewport="tablet" />
+        <ProjectDetail
+          project={project}
+          viewport="tablet"
+          thumbFailed={thumbFailed}
+          onThumbnailError={() => setThumbFailed(true)}
+        />
         <MobileMenuOverlay
-          activeSection={section.slug}
+          activeWork={!inProgressProject}
+          activeInProgress={inProgressProject}
           activeProjectSlug={project.slug}
+          workDisciplineFilters={workDisciplineFilters}
           open={menuOpen}
           onClose={() => setMenuOpen(false)}
         />
       </section>
 
-      <section className="mobile-only mobile-category-screen">
+      <section className={`mobile-only mobile-category-screen${shellThemed}`} style={shellStyle}>
         <MobileStatusBar />
         <MobileTopBar menuOpen={menuOpen} onToggle={() => setMenuOpen((o) => !o)} />
-        <ProjectDetail project={project} viewport="mobile" />
+        <ProjectDetail
+          project={project}
+          viewport="mobile"
+          thumbFailed={thumbFailed}
+          onThumbnailError={() => setThumbFailed(true)}
+        />
         <MobileMenuOverlay
-          activeSection={section.slug}
+          activeWork={!inProgressProject}
+          activeInProgress={inProgressProject}
           activeProjectSlug={project.slug}
+          workDisciplineFilters={workDisciplineFilters}
           open={menuOpen}
           onClose={() => setMenuOpen(false)}
         />
@@ -208,6 +368,31 @@ function InformationScreen() {
         <MobileStatusBar />
         <MobileTopBar mode="home" />
         <InformationSections sections={portfolioInfoSections} viewport="mobile" />
+      </section>
+    </ScreenTransition>
+  )
+}
+
+function WikiScreen() {
+  return (
+    <ScreenTransition>
+      <section className="desktop-only desktop-shell information-screen">
+        <DesktopNavigation activeWiki />
+        <div className="desktop-content">
+          <StudioLogPage viewport="desktop" />
+        </div>
+      </section>
+
+      <section className="tablet-only tablet-information-screen">
+        <TabletStatusBar />
+        <MobileTopBar mode="home" />
+        <StudioLogPage viewport="tablet" />
+      </section>
+
+      <section className="mobile-only mobile-information-screen">
+        <MobileStatusBar />
+        <MobileTopBar mode="home" />
+        <StudioLogPage viewport="mobile" />
       </section>
     </ScreenTransition>
   )
