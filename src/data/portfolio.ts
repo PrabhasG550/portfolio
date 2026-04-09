@@ -902,7 +902,7 @@ export const portfolioProjects: ProjectEntry[] = [
             href: 'https://www.instagram.com/userjsjsjsjsjsjs333/?hl=en',
           },
         ],
-        thumbnailSrc: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775719783/thumbnail_f6ajoq.jpg',
+        thumbnailSrc: '/rainpreviewphoto.png',
         shellBackgroundColor: '#d3dbde',
         artwork:
           'linear-gradient(135deg, #d6d6d6 0%, #d0d2d8 40%, #f4f4f4 100%), radial-gradient(circle at 18% 24%, rgba(255,255,255,0.76), transparent 32%), radial-gradient(circle at 82% 76%, rgba(36,46,60,0.14), transparent 32%)',

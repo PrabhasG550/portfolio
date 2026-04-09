@@ -291,7 +291,7 @@ p {
   margin-top: auto;
   padding-top: 20px;
   background: var(--bg);
-  box-shadow: 0 -20px 36px 20px var(--bg);
+  box-shadow: none;
 }
 
 .desktop-navigation .section-links__wiki-inline {
@@ -833,8 +833,8 @@ p {
   flex-shrink: 0;
   margin-top: auto;
   padding-top: 16px;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 -20px 36px 20px rgba(255, 255, 255, 0.97);
+  background: transparent;
+  box-shadow: none;
 }
 
 .navigation-menu .section-links__wiki-inline,
@@ -848,7 +848,7 @@ p {
   margin-top: auto;
   padding-top: 16px;
   background: var(--bg);
-  box-shadow: 0 -20px 36px 20px var(--bg);
+  box-shadow: none;
 }
 
 .project-gallery {
@@ -1540,7 +1540,7 @@ p {
 
 .project-shell--themed .desktop-navigation .section-links__info-inline {
   background: var(--project-surface);
-  box-shadow: 0 -20px 36px 20px var(--project-surface);
+  box-shadow: none;
 }
 
 .project-shell--themed .mobile-topbar {
