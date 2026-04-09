@@ -953,7 +953,7 @@ export const portfolioInfoSections: InformationSection[] = [
       { label: 'Instagram', href: 'https://www.instagram.com/prabhasgade/' },
       { label: 'X', href: 'https://x.com/prabhasgade333' },
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prabhasgade/' },
-      { label: 'View Resume', href: '/Prabhas_Gade_Resume_2025.pdf' },
+      { label: 'View Resume', href: '/PrabhasGade2026Resume.pdf' },
 
     ],
   },
