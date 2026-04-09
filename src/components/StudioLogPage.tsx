@@ -7,7 +7,7 @@ const loreParagraphs = [
   'My interests always were open ended and involved imagination and creativity. I played violin in orchestra throughout middle and high school and learned how to program while in high school.',
   "I've always wanted to find avenues which connected the roads of art, music, and media to technology in ways that were exciting, innovative, and beautiful.",
   'I rediscovered my passion for creation with the start of our club ThirdSpaceDigital, and with the community we built I decided to start an archive portfolio of all of my work thus far.',
-  'My goal with Rain Studios is to direct my ideas from above into reality with the intensity of thunder. I do not intend on slowing down.',
+  'My goal with Studio Rain is to direct my ideas from above into reality with the intensity of thunder. I do not intend on slowing down.',
 ]
 
 const lorePhotos = [
