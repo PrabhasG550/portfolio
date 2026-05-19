@@ -390,7 +390,7 @@ export const portfolioProjects: ProjectEntry[] = [
         useTechnologyPresentation: true,
         summary:
           'A codon-focused dN/dS-style workflow for sequence data—built to summarize substitution patterns and evolutionary signal, with figures for comparative runs (including photosynthesis-related coding regions) and a Zenodo deposit so methods and outputs stay citable.',
-        year: '2025',
+        year: '2023',
         tags: ['Python', 'Zenodo'],
         externalLinks: [{ label: 'Zenodo record', href: 'https://zenodo.org/records/7577822' }],
         thumbnailSrc: '/PortfolioFiles/technology/dndscalculator/thumbnail.webp',
@@ -651,7 +651,7 @@ export const portfolioProjects: ProjectEntry[] = [
         useTechnologyPresentation: true,
         summary:
           'A narrative editorial produced for Indigo: creative direction and a photo-driven article experience on the web, built to read with magazine pacing rather than a generic template.',
-        year: '2024',
+        year: '2026',
         tags: ['Creative direction', 'Styling', 'Photography', 'Graphics', 'Web design'],
         externalLinks: [
           {
@@ -780,7 +780,7 @@ export const portfolioProjects: ProjectEntry[] = [
         useTechnologyPresentation: true,
         summary:
           'Article design and visuals for Indigo’s andscene issue—Alpha Centauri on the web, built with the same editorial pacing as other Indigo pieces on indigomagazinetx.com.',
-        year: '2025',
+        year: '2026',
         tags: ['Creative direction', 'Styling', 'Photography', 'Graphics', 'Web design'],
         externalLinks: [
           {
@@ -851,11 +851,15 @@ export const portfolioProjects: ProjectEntry[] = [
         disciplines: ['art', 'media'],
         useTechnologyPresentation: true,
         summary: 'A short film—cinematography and visual storytelling for Kindred.',
-        year: '2024',
+        year: '2026',
         tags: ['Film', 'Cinematography'],
         youtubeVideoId: 'fNMkwk0Ei9E',
         thumbnailSrc: '/PortfolioFiles/KindredShortFilm/thumbnail.png',
         externalLinks: [
+          {
+            label: 'Read the writing',
+            href: 'https://3rdspacedigital.org/issues/7',
+          },
           {
             label: 'Watch on YouTube',
             href: 'https://youtu.be/fNMkwk0Ei9E?si=e93RunJ7NtX8-Frv',
@@ -869,7 +873,6 @@ export const portfolioProjects: ProjectEntry[] = [
             paragraphs: [],
             galleries: [
               {
-                heading: 'Behind the scenes',
                 layout: 'mosaic',
                 images: [
                   {
@@ -980,7 +983,7 @@ export const portfolioProjects: ProjectEntry[] = [
         useTechnologyPresentation: true,
         summary:
           'An artist book created for the Throughlines Gallery at UT Dallas, paired with Jennifer Shaw’s photowork of the same title—grief, impermanence, and hope told through human and angel.',
-        year: '2025',
+        year: '2026',
         tags: ['Artist book', 'Photography', 'Gallery'],
         thumbnailSrc:
           'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779217955/wedrovenorthcoverphoto_pfy8za.jpg',
