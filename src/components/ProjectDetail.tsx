@@ -71,13 +71,20 @@ export function ProjectDetail({
 
       {links.length > 0 ? (
         <ul className="project-detail__links">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} target="_blank" rel="noopener noreferrer">
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {links.map((link) => {
+            const isExternal = /^https?:\/\//i.test(link.href)
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  {...(link.href.toLowerCase().endsWith('.pdf') ? { download: true } : {})}
+                >
+                  {link.label}
+                </a>
+              </li>
+            )
+          })}
         </ul>
       ) : null}
 
@@ -109,6 +116,17 @@ export function ProjectDetail({
             </section>
           ))}
         </div>
+      ) : null}
+
+      {project.pdfSrc ? (
+        <section className="project-detail__pdf" aria-label="Book PDF">
+          <h2 className="project-detail__section-heading">Artist book</h2>
+          <iframe
+            className="project-detail__pdf-frame"
+            title={`${project.title} PDF`}
+            src={project.pdfSrc}
+          />
+        </section>
       ) : null}
     </article>
   )

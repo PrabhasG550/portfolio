@@ -1714,6 +1714,30 @@ p {
   text-underline-offset: 3px;
 }
 
+.project-detail__pdf {
+  margin-top: 32px;
+  max-width: min(100%, 52rem);
+}
+
+.project-detail__pdf .project-detail__section-heading {
+  margin-bottom: 16px;
+}
+
+.project-detail__pdf-frame {
+  width: 100%;
+  min-height: min(70vh, 720px);
+  height: 70vh;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  display: block;
+  background: #f5f5f5;
+}
+
+.project-detail--mobile .project-detail__pdf-frame {
+  min-height: 50vh;
+  height: 55vh;
+}
+
 .project-detail__figure {
   margin: 24px 0 0;
   max-width: min(100%, 52rem);

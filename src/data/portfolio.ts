@@ -63,6 +63,8 @@ export interface ProjectEntry {
   shellBackgroundColor?: string
   /** When true, skip dominant-color shell theming (keep default white/black UI) while still using `thumbnailSrc` for the hero/card. */
   disableThumbnailShellTheme?: boolean
+  /** Site-root path to an inline PDF viewer on the detail page (e.g. artist books). */
+  pdfSrc?: string
 }
 
 /** Resolve a YouTube video id from common URL shapes (youtu.be, watch?v=). */
@@ -488,33 +490,6 @@ export const portfolioProjects: ProjectEntry[] = [
         ],
       },
       {
-        slug: 'peer-2-peer-server',
-        title: 'Peer 2 Peer Server',
-        navCategory: 'in-progress',
-        disciplines: ['technology'],
-        useTechnologyPresentation: true,
-        summary:
-          'A peer-to-peer server experiment focused on message routing and connection lifecycle—notes and implementation are still in progress; this entry will gain diagrams, protocol notes, and benchmarks once the build is documented.',
-        year: '2024',
-        tags: ['Node.js', 'Networking'],
-        artwork:
-          'linear-gradient(150deg, #d9d9d9 0%, #d2d5db 40%, #f3f4f6 100%), radial-gradient(circle at 78% 28%, rgba(255,255,255,0.65), transparent 28%), radial-gradient(circle at 20% 88%, rgba(60,76,92,0.16), transparent 35%)',
-        detailSections: [
-          {
-            heading: 'Status',
-            paragraphs: [
-              'Per the project notes this section is coming soon—no public WebP set yet. The goal is to document a small P2P server that handles discovery, reliable routing, and failure modes worth teaching, not just a toy echo service.',
-            ],
-          },
-          {
-            heading: 'Planned write-up',
-            paragraphs: [
-              'When it lands, expect architecture diagrams, the handshake and retry story, and honest notes on what broke under packet loss or asymmetric NAT. Until then the gradient card stands in as a placeholder.',
-            ],
-          },
-        ],
-      },
-      {
         slug: 'acm-media-dev-sage',
         title: 'ACM media/dev: SAGE',
         navCategory: 'in-progress',
@@ -799,26 +774,141 @@ export const portfolioProjects: ProjectEntry[] = [
         ],
       },
       {
-        slug: 'thirdspacedigital-wings4gold',
-        title: 'Wings Shortfilm',
-        navCategory: 'in-progress',
-        disciplines: ['art', 'media'],
-        summary: 'Creative media developed for the ThirdSpaceDigital Wings4Gold campaign.',
-        year: '2024',
-        tags: ['Campaign', 'Social'],
+        slug: 'indigo-alpha-centauri',
+        title: 'Indigo Magazine: Alpha Centauri',
+        disciplines: ['art', 'technology', 'media'],
+        useTechnologyPresentation: true,
+        summary:
+          'Article design and visuals for Indigo’s andscene issue—Alpha Centauri on the web, built with the same editorial pacing as other Indigo pieces on indigomagazinetx.com.',
+        year: '2025',
+        tags: ['Creative direction', 'Styling', 'Photography', 'Graphics', 'Web design'],
+        externalLinks: [
+          {
+            label: 'Read the piece',
+            href: 'https://indigomagazinetx.com/Issues/andscene/post-office',
+          },
+          {
+            label: 'Indigo Magazine TX',
+            href: 'https://indigomagazinetx.com/',
+          },
+        ],
+        thumbnailSrc:
+          'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779215603/titlecard_jxhnym.webp',
+        shellBackgroundColor: '#e8e6e2',
         artwork:
-          'linear-gradient(155deg, #d9d9d9 0%, #d2d4d8 38%, #f4f4f4 100%), radial-gradient(circle at 78% 18%, rgba(255,255,255,0.75), transparent 30%), radial-gradient(circle at 20% 80%, rgba(54,64,78,0.15), transparent 34%)',
+          'linear-gradient(145deg, #d8d8d8 0%, #cfd2d8 44%, #f4f4f4 100%), radial-gradient(circle at 78% 22%, rgba(255,255,255,0.72), transparent 30%), radial-gradient(circle at 24% 82%, rgba(34,42,56,0.13), transparent 36%)',
+        detailSections: [
+          {
+            heading: 'Editorial & build',
+            paragraphs: [
+              'This piece lives in Indigo’s andscene issue. I contributed to the article experience on the site—layout and design tuned to the story, using the same reusable Indigo article components as earlier features.',
+              'The spreads below are captures from the live article; full writing and credits live on Indigo (see link above).',
+            ],
+            galleries: [
+              {
+                heading: 'Issue gallery',
+                layout: 'stack',
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779215398/andscene_p1_5_i1cad1.png',
+                    caption: 'Article spread.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779215398/andscene_p2_1_tshpps.png',
+                    caption: 'Article spread.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779215395/andscene_p3_ewvt8s.png',
+                    caption: 'Article spread.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779215398/andscene_p4_a2z3qz.png',
+                    caption: 'Article spread.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779215397/andscene_p5_vvfk5b.png',
+                    caption: 'Article spread.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779215390/andscene_p6_eqfiij.png',
+                    caption: 'Article spread.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            heading: 'Credits',
+            paragraphs: [
+              'Full credits and writing on Indigo Magazine TX (see link above).',
+            ],
+          },
+        ],
       },
       {
-        slug: 'canard-shortfilm',
-        title: 'Canard Shortfilm',
-        navCategory: 'in-progress',
+        slug: 'thirdspacedigital-wings4gold',
+        title: 'Kindred Shortfilm',
         disciplines: ['art', 'media'],
-        summary: 'Short film currently in progress.',
-        year: '2026',
-        tags: ['Film'],
+        useTechnologyPresentation: true,
+        summary: 'A short film—cinematography and visual storytelling for Kindred.',
+        year: '2024',
+        tags: ['Film', 'Cinematography'],
+        youtubeVideoId: 'fNMkwk0Ei9E',
+        thumbnailSrc: '/PortfolioFiles/KindredShortFilm/thumbnail.png',
+        externalLinks: [
+          {
+            label: 'Watch on YouTube',
+            href: 'https://youtu.be/fNMkwk0Ei9E?si=e93RunJ7NtX8-Frv',
+          },
+        ],
         artwork:
-          'linear-gradient(145deg, #d8d8d8 0%, #d3d5d7 34%, #efefef 100%), radial-gradient(circle at 72% 22%, rgba(255,255,255,0.76), transparent 32%), radial-gradient(circle at 26% 74%, rgba(52,60,68,0.13), transparent 34%)',
+          'linear-gradient(155deg, #d9d9d9 0%, #d2d4d8 38%, #f4f4f4 100%), radial-gradient(circle at 78% 18%, rgba(255,255,255,0.75), transparent 30%), radial-gradient(circle at 20% 80%, rgba(54,64,78,0.15), transparent 34%)',
+        detailSections: [
+          {
+            heading: 'Stills',
+            paragraphs: [],
+            galleries: [
+              {
+                heading: 'Behind the scenes',
+                layout: 'mosaic',
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779216746/IMG_0883_1_lrytq7.webp',
+                    caption: 'Production still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779216624/IMG_8139_1_ridkkp.webp',
+                    caption: 'Production still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779216621/DSC02517_1_mhff0g.webp',
+                    caption: 'Production still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779216618/DSC03982_2_n0mazj.webp',
+                    caption: 'Production still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779216616/thisone_4_dgilsg.webp',
+                    caption: 'Production still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779216613/DSC02549_1_1_rjvlk0.webp',
+                    caption: 'Production still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779216609/IMG_7449_x36ozn.webp',
+                    caption: 'Production still.',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779216606/IMG_2961_m3sfso.webp',
+                    caption: 'Production still.',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         slug: 'pingutography',
@@ -839,42 +929,38 @@ export const portfolioProjects: ProjectEntry[] = [
       },
       {
         slug: 'seven00hills',
-        title: 'Seven00hills',
-        navCategory: 'in-progress',
+        title: 'Seven00Hills',
         disciplines: ['art', 'media'],
-        summary: 'Music project.',
+        useTechnologyPresentation: true,
+        summary: 'Music and visual work for the Seven00Hills project—releases, direction, and linked media.',
         year: '2026',
-        tags: ['Music'],
+        tags: ['Music', 'Music video'],
+        youtubeVideoId: 'outrVrTm6a4',
+        thumbnailSrc: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779217209/dah_uymcq5.png',
         externalLinks: [
           {
             label: '@seven00hills',
             href: 'https://www.instagram.com/seven00hills/',
           },
+          {
+            label: 'YouTube',
+            href: 'https://youtu.be/outrVrTm6a4?si=dvsm3QwRvWpvRBbS',
+          },
+          {
+            label: 'Spotify',
+            href: 'https://open.spotify.com/artist/1yobBFOIBEii8D5j3Dju3m',
+          },
         ],
         artwork:
           'linear-gradient(145deg, #d8d8d8 0%, #d3d5d7 34%, #efefef 100%), radial-gradient(circle at 72% 22%, rgba(255,255,255,0.76), transparent 32%), radial-gradient(circle at 26% 74%, rgba(52,60,68,0.13), transparent 34%)',
-      },
-      {
-        slug: 'seven00hills-torn-mv',
-        title: 'Seven00Hills: Torn MV',
-        navCategory: 'in-progress',
-        disciplines: ['art', 'media'],
-        summary: 'Music video production and creative direction for Seven00Hills - Torn.',
-        year: '2023',
-        tags: ['Premiere', 'Color'],
-        artwork:
-          'linear-gradient(145deg, #d8d8d8 0%, #d3d5d7 34%, #efefef 100%), radial-gradient(circle at 72% 22%, rgba(255,255,255,0.76), transparent 32%), radial-gradient(circle at 26% 74%, rgba(52,60,68,0.13), transparent 34%)',
-      },
-      {
-        slug: 'seven00hills-friends-mv',
-        title: 'Seven00Hills: Friends MV',
-        navCategory: 'in-progress',
-        disciplines: ['art', 'media'],
-        summary: 'Music video production and creative direction for Seven00Hills - Friends.',
-        year: '2023',
-        tags: ['Premiere', 'Color'],
-        artwork:
-          'linear-gradient(150deg, #d9d9d9 0%, #d2d5db 40%, #f3f4f6 100%), radial-gradient(circle at 78% 28%, rgba(255,255,255,0.65), transparent 28%), radial-gradient(circle at 20% 88%, rgba(60,76,92,0.16), transparent 35%)',
+        detailSections: [
+          {
+            heading: 'About',
+            paragraphs: [
+              'Seven00Hills is a music project spanning releases and visual work. Listen on Spotify, follow on Instagram, or watch the featured video above.',
+            ],
+          },
+        ],
       },
       {
         slug: 'album-cover-paintings',
@@ -886,6 +972,43 @@ export const portfolioProjects: ProjectEntry[] = [
         tags: ['Acrylic'],
         artwork:
           'linear-gradient(145deg, #d7d7d7 0%, #d1d3d7 40%, #f3f3f3 100%), radial-gradient(circle at 70% 20%, rgba(255,255,255,0.72), transparent 32%), radial-gradient(circle at 30% 82%, rgba(42,54,69,0.13), transparent 34%)',
+      },
+      {
+        slug: 'we-drove-north-to-the-farm',
+        title: 'We Drove North to the Farm: Artist Book',
+        disciplines: ['art', 'media'],
+        useTechnologyPresentation: true,
+        summary:
+          'An artist book created for the Throughlines Gallery at UT Dallas, paired with Jennifer Shaw’s photowork of the same title—grief, impermanence, and hope told through human and angel.',
+        year: '2025',
+        tags: ['Artist book', 'Photography', 'Gallery'],
+        thumbnailSrc:
+          'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779217955/wedrovenorthcoverphoto_pfy8za.jpg',
+        pdfSrc: '/LargerFiles/WeDroveNorthToTheFarm/wedrovenorth.pdf',
+        externalLinks: [
+          {
+            label: 'Download PDF',
+            href: '/LargerFiles/WeDroveNorthToTheFarm/wedrovenorth.pdf',
+          },
+        ],
+        artwork:
+          'linear-gradient(150deg, #d9d9d9 0%, #d2d5db 40%, #f3f4f6 100%), radial-gradient(circle at 78% 28%, rgba(255,255,255,0.65), transparent 28%), radial-gradient(circle at 20% 88%, rgba(60,76,92,0.16), transparent 35%)',
+        detailSections: [
+          {
+            heading: 'About the project',
+            paragraphs: [
+              'This project was for the Throughlines Gallery at University of Texas at Dallas. I was tasked to create an artist book with the same title as a photowork, and I chose We Drove North to the Farm by Jennifer Shaw. Below is my wall label.',
+            ],
+          },
+          {
+            heading: 'Wall label',
+            paragraphs: [
+              'Shaw, Jennifer, We Drove North to the Farm, 2011',
+              'My book follows an experience of a human and an angel who go to a farm together. The human seemingly grieves for a lost friend, and the angel who accompanies him is observing. The angel is an immortal being, and to him, the human is a symbol of fleeting life and beauty. As the book closes, we see the angel contemplating a human body, thinking to himself that there is something else out there to experience. To him, the human represents to us what would be a flower.',
+              'The artwork by Jennifer Shaw spoke to me in a very similar way when I saw it after making this book. The photograph shows a toy horse after hurricane Katrina left in the floods of the storm. I felt as though this work spoke volumes of grief, anxiety, and hope that we go through during bleak periods. There are so many things out of our control, yet this is precisely what makes human experience what it is. The times we’ve spent in desperation, grief, and anxiety give our existence depth. To me the toy horse represents the ephemeral nature of humans, and how it can empower us to make an impact on ourselves and others.',
+            ],
+          },
+        ],
       },
       {
         slug: 'rain-dancing',
