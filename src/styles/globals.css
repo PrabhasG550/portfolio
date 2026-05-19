@@ -16,6 +16,14 @@
 
 @font-face {
   font-family: 'Inter';
+  src: url('/fonts/ABCMonumentGrotesk-Medium-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
   src: url('/fonts/ABCMonumentGrotesk-Bold-Trial.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
@@ -41,7 +49,7 @@
 @font-face {
   font-family: 'ABCMonumentGrotesk';
   src: url('/fonts/ABCMonumentGrotesk-Medium-Trial.otf') format('opentype');
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -972,7 +980,7 @@ p {
 .project-card__title {
   margin: 0;
   font-size: clamp(1.125rem, 2.8vw, 1.375rem);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -983,6 +991,7 @@ p {
   flex-shrink: 0;
   max-width: 42%;
   font-size: 12px;
+  font-weight: 500;
   line-height: 1.35;
   color: var(--muted);
   letter-spacing: 0.02em;
@@ -992,6 +1001,7 @@ p {
 .project-card__tags {
   margin: 0;
   font-size: 11px;
+  font-weight: 500;
   color: var(--muted);
   opacity: 0.82;
   letter-spacing: 0.02em;
@@ -1656,14 +1666,14 @@ p {
 .project-detail__title {
   margin: 0;
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
 }
 
 .project-detail__type {
   flex-shrink: 0;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1674,6 +1684,7 @@ p {
   gap: 6px;
   padding-top: 8px;
   font-size: 13px;
+  font-weight: 500;
   color: var(--muted);
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -1687,6 +1698,7 @@ p {
   margin: 8px 0 0;
   padding: 0;
   font-size: 12px;
+  font-weight: 500;
   line-height: 1.4;
   color: var(--muted);
   letter-spacing: 0.04em;
@@ -1703,6 +1715,7 @@ p {
 .project-detail__body {
   max-width: 52rem;
   font-size: 19px;
+  font-weight: 300;
   line-height: 1.5;
 }
 
@@ -1715,6 +1728,7 @@ p {
   gap: 12px 20px;
   max-width: 52rem;
   font-size: 16px;
+  font-weight: 300;
   line-height: 1.4;
 }
 
@@ -1784,6 +1798,7 @@ p {
 
 .project-detail__section p {
   margin: 0;
+  font-weight: 300;
 }
 
 .project-detail__section-paragraph--preline {
@@ -1800,6 +1815,7 @@ p {
 .project-detail__gallery-heading {
   margin: 0;
   font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text);
@@ -1913,7 +1929,7 @@ p {
 .project-detail__section-heading {
   margin: 0;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text);
