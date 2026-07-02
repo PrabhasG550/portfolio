@@ -82,14 +82,12 @@ export function themeFromAverageRgb(avg: { r: number; g: number; b: number }, mi
   }
 
   const textRgb = useLightText ? TEXT_LIGHT : TEXT_DARK
-  const mutedAlpha = useLightText ? 0.72 : 0.56
+  const textColor = `rgb(${textRgb.r}, ${textRgb.g}, ${textRgb.b})`
 
   return {
     background: `rgb(${bg.r}, ${bg.g}, ${bg.b})`,
-    text: `rgb(${textRgb.r}, ${textRgb.g}, ${textRgb.b})`,
-    muted: useLightText
-      ? `rgba(246, 246, 246, ${mutedAlpha})`
-      : `rgba(9, 9, 9, ${mutedAlpha})`,
+    text: textColor,
+    muted: textColor,
     line: useLightText ? 'rgba(246, 246, 246, 0.35)' : 'rgba(9, 9, 9, 0.35)',
     linkUnderline: useLightText ? 'rgba(246, 246, 246, 0.95)' : 'rgba(9, 9, 9, 0.85)',
   }
