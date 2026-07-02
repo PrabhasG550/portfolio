@@ -914,23 +914,6 @@ export const portfolioProjects: ProjectEntry[] = [
         ],
       },
       {
-        slug: 'pingutography',
-        title: 'Pingutography',
-        navCategory: 'in-progress',
-        disciplines: ['art', 'media'],
-        summary: 'Photography playground.',
-        year: '2026',
-        tags: ['Photography'],
-        externalLinks: [
-          {
-            label: '@pingutography',
-            href: 'https://www.instagram.com/pingutography/',
-          },
-        ],
-        artwork:
-          'linear-gradient(150deg, #d9d9d9 0%, #d2d5db 40%, #f3f4f6 100%), radial-gradient(circle at 78% 28%, rgba(255,255,255,0.65), transparent 28%), radial-gradient(circle at 20% 88%, rgba(60,76,92,0.16), transparent 35%)',
-      },
-      {
         slug: 'seven00hills',
         title: 'Seven00Hills',
         disciplines: ['art', 'media'],
@@ -964,17 +947,6 @@ export const portfolioProjects: ProjectEntry[] = [
             ],
           },
         ],
-      },
-      {
-        slug: 'album-cover-paintings',
-        title: 'Album Cover Paintings',
-        navCategory: 'in-progress',
-        disciplines: ['art'],
-        summary: 'A set of paintings developed as visual concepts for album cover artwork.',
-        year: '2024',
-        tags: ['Acrylic'],
-        artwork:
-          'linear-gradient(145deg, #d7d7d7 0%, #d1d3d7 40%, #f3f3f3 100%), radial-gradient(circle at 70% 20%, rgba(255,255,255,0.72), transparent 32%), radial-gradient(circle at 30% 82%, rgba(42,54,69,0.13), transparent 34%)',
       },
       {
         slug: 'we-drove-north-to-the-farm',
