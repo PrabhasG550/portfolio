@@ -921,8 +921,8 @@ export const portfolioProjects: ProjectEntry[] = [
         summary: 'Music and visual work for the Seven00Hills project—releases, direction, and linked media.',
         year: '2026',
         tags: ['Music', 'Music video'],
-        youtubeVideoId: 'outrVrTm6a4',
-        thumbnailSrc: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1779217209/dah_uymcq5.png',
+        youtubeVideoId: 'qipmjdrbog8',
+        thumbnailSrc: 'https://img.youtube.com/vi/qipmjdrbog8/maxresdefault.jpg',
         externalLinks: [
           {
             label: '@seven00hills',
@@ -930,7 +930,7 @@ export const portfolioProjects: ProjectEntry[] = [
           },
           {
             label: 'YouTube',
-            href: 'https://youtu.be/outrVrTm6a4?si=dvsm3QwRvWpvRBbS',
+            href: 'https://youtu.be/qipmjdrbog8?si=Fp2hC2GVaQBNgy4T',
           },
           {
             label: 'Spotify',
