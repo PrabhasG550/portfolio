@@ -39,7 +39,7 @@ function NativeVideoPlayer({
       disablePictureInPicture
       playsInline
       muted
-      defaultMuted
+      // defaultMuted
       autoPlay={autoPlay}
       preload="metadata"
       onVolumeChange={(e) => {
