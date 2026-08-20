@@ -13,7 +13,7 @@ const loreParagraphs = [
 const lorePhotos = [
   'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775722074/me1_xeogg7.jpg',
   'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775722071/me2_oczkfa.jpg',
-  'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775722069/me3_elg8gp.jpg',
+  'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1787245131/78E5CEA0-06C7-4AAA-98AE-311519529A4D_etec70.jpg',
   'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775721993/me4_tij0vl.jpg',
   'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775722077/me5_tsfznl.jpg',
 ]

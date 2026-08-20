@@ -18,11 +18,47 @@ function PlayVideoOverlay() {
   )
 }
 
+function NativeVideoPlayer({
+  title,
+  videoSrc,
+  className,
+  autoPlay = false,
+}: {
+  title: string
+  videoSrc: string
+  className: string
+  autoPlay?: boolean
+}) {
+  return (
+    <video
+      className={`${className} tech-media-video--no-audio`}
+      title={`${title} demo video`}
+      src={videoSrc}
+      controls
+      controlsList="nodownload noplaybackrate noremoteplayback"
+      disablePictureInPicture
+      playsInline
+      muted
+      defaultMuted
+      autoPlay={autoPlay}
+      preload="metadata"
+      onVolumeChange={(e) => {
+        const el = e.currentTarget
+        if (!el.muted || el.volume > 0) {
+          el.muted = true
+          el.volume = 0
+        }
+      }}
+    />
+  )
+}
+
 interface DetailHeroProps {
   title: string
   artwork: string
   thumbnailSrc?: string
   youtubeVideoId?: string
+  videoSrc?: string
   videoPlaying: boolean
   onPlayVideo: () => void
   thumbFailed: boolean
@@ -34,26 +70,42 @@ export function TechnologyDetailHero({
   artwork,
   thumbnailSrc,
   youtubeVideoId,
+  videoSrc,
   videoPlaying,
   onPlayVideo,
   thumbFailed,
   onThumbError,
 }: DetailHeroProps) {
   const showThumb = thumbnailSrc && !thumbFailed
-  const hasVideo = Boolean(youtubeVideoId)
+  const hasVideo = Boolean(youtubeVideoId || videoSrc)
 
-  if (hasVideo && youtubeVideoId && videoPlaying) {
-    return (
-      <div className="project-detail__hero project-detail__hero--video">
-        <iframe
-          className="project-detail__hero-iframe"
-          title={`${title} demo video`}
-          src={playEmbedSrc(youtubeVideoId)}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-      </div>
-    )
+  if (hasVideo && videoPlaying) {
+    if (videoSrc) {
+      return (
+        <div className="project-detail__hero project-detail__hero--video">
+          <NativeVideoPlayer
+            title={title}
+            videoSrc={videoSrc}
+            className="project-detail__hero-video"
+            autoPlay
+          />
+        </div>
+      )
+    }
+
+    if (youtubeVideoId) {
+      return (
+        <div className="project-detail__hero project-detail__hero--video">
+          <iframe
+            className="project-detail__hero-iframe"
+            title={`${title} demo video`}
+            src={playEmbedSrc(youtubeVideoId)}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      )
+    }
   }
 
   if (showThumb && hasVideo) {
@@ -88,19 +140,29 @@ export function TechnologyDetailHero({
     )
   }
 
-  if (hasVideo && youtubeVideoId && !showThumb) {
-    return (
-      <div className="project-detail__hero project-detail__hero--video">
-        <iframe
-          className="project-detail__hero-iframe"
-          title={`${title} demo video`}
-          src={youtubeEmbedSrc(youtubeVideoId)}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-      </div>
-    )
+  if (hasVideo && !showThumb) {
+    if (videoSrc) {
+      return (
+        <div className="project-detail__hero project-detail__hero--video">
+          <NativeVideoPlayer title={title} videoSrc={videoSrc} className="project-detail__hero-video" />
+        </div>
+      )
+    }
+
+    if (youtubeVideoId) {
+      return (
+        <div className="project-detail__hero project-detail__hero--video">
+          <iframe
+            className="project-detail__hero-iframe"
+            title={`${title} demo video`}
+            src={youtubeEmbedSrc(youtubeVideoId)}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      )
+    }
   }
 
   return (
@@ -115,6 +177,7 @@ interface CardArtworkProps {
   artwork: string
   thumbnailSrc?: string
   youtubeVideoId?: string
+  videoSrc?: string
 }
 
 export function TechnologyCardArtwork({
@@ -122,29 +185,44 @@ export function TechnologyCardArtwork({
   artwork,
   thumbnailSrc,
   youtubeVideoId,
+  videoSrc,
 }: CardArtworkProps) {
   const [thumbFailed, setThumbFailed] = useState(false)
   const [videoPlaying, setVideoPlaying] = useState(false)
 
   const showThumb = thumbnailSrc && !thumbFailed
-  const hasVideo = Boolean(youtubeVideoId)
+  const hasVideo = Boolean(youtubeVideoId || videoSrc)
 
-  if (hasVideo && youtubeVideoId && videoPlaying) {
-    return (
-      <div
-        className="project-card__artwork project-card__artwork--video"
-        onClick={(e) => e.stopPropagation()}
-        role="presentation"
-      >
-        <iframe
-          className="project-card__iframe"
-          title={`${title} demo video`}
-          src={playEmbedSrc(youtubeVideoId)}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-      </div>
-    )
+  if (hasVideo && videoPlaying) {
+    if (videoSrc) {
+      return (
+        <div
+          className="project-card__artwork project-card__artwork--video"
+          onClick={(e) => e.stopPropagation()}
+          role="presentation"
+        >
+          <NativeVideoPlayer title={title} videoSrc={videoSrc} className="project-card__video" autoPlay />
+        </div>
+      )
+    }
+
+    if (youtubeVideoId) {
+      return (
+        <div
+          className="project-card__artwork project-card__artwork--video"
+          onClick={(e) => e.stopPropagation()}
+          role="presentation"
+        >
+          <iframe
+            className="project-card__iframe"
+            title={`${title} demo video`}
+            src={playEmbedSrc(youtubeVideoId)}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      )
+    }
   }
 
   if (showThumb && hasVideo) {
@@ -188,23 +266,37 @@ export function TechnologyCardArtwork({
     )
   }
 
-  if (hasVideo && youtubeVideoId && !showThumb) {
-    return (
-      <div
-        className="project-card__artwork project-card__artwork--video"
-        onClick={(e) => e.stopPropagation()}
-        role="presentation"
-      >
-        <iframe
-          className="project-card__iframe"
-          title={`${title} demo video`}
-          src={youtubeEmbedSrc(youtubeVideoId)}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-      </div>
-    )
+  if (hasVideo && !showThumb) {
+    if (videoSrc) {
+      return (
+        <div
+          className="project-card__artwork project-card__artwork--video"
+          onClick={(e) => e.stopPropagation()}
+          role="presentation"
+        >
+          <NativeVideoPlayer title={title} videoSrc={videoSrc} className="project-card__video" />
+        </div>
+      )
+    }
+
+    if (youtubeVideoId) {
+      return (
+        <div
+          className="project-card__artwork project-card__artwork--video"
+          onClick={(e) => e.stopPropagation()}
+          role="presentation"
+        >
+          <iframe
+            className="project-card__iframe"
+            title={`${title} demo video`}
+            src={youtubeEmbedSrc(youtubeVideoId)}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      )
+    }
   }
 
   return <div className="project-card__artwork" style={{ background: artwork }} />

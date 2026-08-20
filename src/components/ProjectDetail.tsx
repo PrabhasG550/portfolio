@@ -37,6 +37,7 @@ export function ProjectDetail({
           artwork={project.artwork}
           thumbnailSrc={project.thumbnailSrc}
           youtubeVideoId={project.youtubeVideoId}
+          videoSrc={project.videoSrc}
           videoPlaying={videoPlaying}
           onPlayVideo={() => setVideoPlaying(true)}
           thumbFailed={thumbFailed}
@@ -119,11 +120,11 @@ export function ProjectDetail({
       ) : null}
 
       {project.pdfSrc ? (
-        <section className="project-detail__pdf" aria-label="Book PDF">
-          <h2 className="project-detail__section-heading">Artist book</h2>
+        <section className="project-detail__pdf" aria-label={project.pdfHeading ?? 'Document'}>
+          <h2 className="project-detail__section-heading">{project.pdfHeading ?? 'Artist book'}</h2>
           <iframe
             className="project-detail__pdf-frame"
-            title={`${project.title} PDF`}
+            title={`${project.title} ${project.pdfHeading ?? 'PDF'}`}
             src={project.pdfSrc}
           />
         </section>
@@ -152,7 +153,9 @@ function SectionFigure({ figure }: { figure: ProjectDetailFigure }) {
 function SectionGallery({ gallery }: { gallery: ProjectDetailGallery }) {
   const layout = gallery.layout ?? 'mosaic'
   const mosaic = layout === 'mosaic'
+  const preview = layout === 'preview'
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [previewIndex, setPreviewIndex] = useState(0)
 
   useEffect(() => {
     if (activeIndex === null) return
@@ -176,6 +179,80 @@ function SectionGallery({ gallery }: { gallery: ProjectDetailGallery }) {
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [activeIndex, gallery.images.length, mosaic])
+
+  useEffect(() => {
+    if (!preview || gallery.images.length === 0) return
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target
+      if (
+        target instanceof HTMLElement &&
+        (target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
+          target.tagName === 'SELECT' ||
+          target.isContentEditable)
+      ) {
+        return
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        setPreviewIndex((i) => (i + 1) % gallery.images.length)
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        setPreviewIndex((i) => (i - 1 + gallery.images.length) % gallery.images.length)
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [preview, gallery.images.length])
+
+  if (preview) {
+    const current = gallery.images[previewIndex] ?? gallery.images[0]
+    const total = gallery.images.length
+
+    return (
+      <div className="project-detail__gallery project-detail__gallery--preview">
+        {gallery.heading ? <h3 className="project-detail__gallery-heading">{gallery.heading}</h3> : null}
+        <div className="project-detail__slide-preview" tabIndex={0} aria-label="Slide preview">
+          <div className="project-detail__slide-preview-stage">
+            {current ? (
+              <img
+                className="project-detail__slide-preview-img"
+                src={current.src}
+                alt={current.caption}
+                decoding="async"
+              />
+            ) : null}
+          </div>
+          <div className="project-detail__slide-preview-bar">
+            <button
+              type="button"
+              className="project-detail__slide-preview-nav"
+              onClick={() => setPreviewIndex((i) => (i - 1 + total) % total)}
+              aria-label="Previous slide"
+              disabled={total <= 1}
+            >
+              Prev
+            </button>
+            <span className="project-detail__slide-preview-count" aria-live="polite">
+              {total ? `${previewIndex + 1} / ${total}` : '0 / 0'}
+            </span>
+            <button
+              type="button"
+              className="project-detail__slide-preview-nav"
+              onClick={() => setPreviewIndex((i) => (i + 1) % total)}
+              aria-label="Next slide"
+              disabled={total <= 1}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="project-detail__gallery">

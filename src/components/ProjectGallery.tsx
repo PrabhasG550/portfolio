@@ -23,7 +23,7 @@ function ProjectCard({ project }: { project: ProjectEntry }) {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const richTech = Boolean(project.useTechnologyPresentation)
-  const hasVideo = Boolean(project.youtubeVideoId)
+  const hasVideo = Boolean(project.youtubeVideoId || project.videoSrc)
 
   return (
     <article
@@ -37,6 +37,7 @@ function ProjectCard({ project }: { project: ProjectEntry }) {
           artwork={project.artwork}
           thumbnailSrc={project.thumbnailSrc}
           youtubeVideoId={project.youtubeVideoId}
+          videoSrc={project.videoSrc}
         />
       ) : hasVideo && project.youtubeVideoId ? (
         <div

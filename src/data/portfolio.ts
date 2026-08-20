@@ -26,7 +26,7 @@ export interface ProjectDetailGallery {
   heading?: string
   buttonLabel?: string
   expandable?: boolean
-  layout?: 'mosaic' | 'stack'
+  layout?: 'mosaic' | 'stack' | 'preview'
   images: ProjectDetailFigure[]
 }
 
@@ -55,6 +55,8 @@ export interface ProjectEntry {
   /** Rich thumbnail / video hero layout (former “technology” section presentation). */
   useTechnologyPresentation?: boolean
   youtubeVideoId?: string
+  /** Direct video URL (e.g. Cloudinary mp4) for thumbnail+play hero when not using YouTube. */
+  videoSrc?: string
   externalLinks?: ProjectExternalLink[]
   detailSections?: ProjectDetailSection[]
   /** Public URL (from site root) for cover / card image — used heavily in Technology. */
@@ -63,8 +65,10 @@ export interface ProjectEntry {
   shellBackgroundColor?: string
   /** When true, skip dominant-color shell theming (keep default white/black UI) while still using `thumbnailSrc` for the hero/card. */
   disableThumbnailShellTheme?: boolean
-  /** Site-root path to an inline PDF viewer on the detail page (e.g. artist books). */
+  /** Site-root path or absolute URL to an inline PDF viewer on the detail page (e.g. artist books, slides). */
   pdfSrc?: string
+  /** Heading above the PDF embed. Defaults to "Artist book". */
+  pdfHeading?: string
 }
 
 /** Resolve a YouTube video id from common URL shapes (youtu.be, watch?v=). */
@@ -217,6 +221,79 @@ export const portfolioProjects: ProjectEntry[] = [
             heading: 'Tech stack',
             paragraphs: [
               'FastAPI + MongoDB for frame state, gesture events, plugin sessions, snapshots, and patch history. WebSockets for realtime Figma sync. Deterministic style extraction from snapshots for reliable defaults; LangChain / Groq to generate and reconcile content and structure where AI helps.',
+            ],
+          },
+        ],
+      },
+      {
+        slug: 'mudra-detection',
+        title: 'MudraDetection',
+        disciplines: ['art', 'technology'],
+        useTechnologyPresentation: true,
+        summary:
+          'Real-time recognition of Bharatanatyam hasta mudras on the edge: a ResNet-18 classifier running fully on-device on an NVIDIA Jetson Orin Nano with a Logitech C270 webcam—built for dance training, cultural preservation, and interactive installation work where gesture becomes a live interface.',
+        year: '2025',
+        tags: ['PyTorch', 'ResNet-18', 'ONNX', 'TensorRT', 'Jetson', 'Computer Vision'],
+        thumbnailSrc:
+          'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1787246543/mudrathumbnail_h9ufi2.png',
+        videoSrc:
+          'https://res.cloudinary.com/ddcf7lxh1/video/upload/f_mp4,q_auto/v1787246291/linkedin-video_lyt0yn.mp4',
+        artwork:
+          'linear-gradient(145deg, #d7d9d8 0%, #cfd6d4 36%, #f1f3f2 100%), radial-gradient(circle at 74% 20%, rgba(255,255,255,0.72), transparent 30%), radial-gradient(circle at 22% 78%, rgba(20,80,70,0.12), transparent 34%)',
+        detailSections: [
+          {
+            heading: 'Idea & purpose',
+            paragraphs: [
+              'Hastas (mudras) are the hand language of Bharatanatyam—precise finger shapes that carry objects, actions, emotion, and story. Beginners struggle with near-identical forms, and audiences often miss the meaning mid-performance.',
+              'MudraDetection is a real-time computer-vision system that classifies single-hand (asamyuta) mudras from live camera input and returns a label with confidence—feedback for training, a reading aid for education, and a gesture layer artists can wire into installation shows.',
+            ],
+          },
+          {
+            heading: 'Edge hardware',
+            paragraphs: [
+              'The full pipeline runs on-device on an NVIDIA Jetson Orin Nano—no cloud round-trip for inference. Live frames come from a Logitech C270 webcam. The model is converted to ONNX and accelerated with TensorRT so the Jetson can keep low-latency labels usable in a gallery, studio, or stage setting.',
+              'That stack matters for installations as much as for employers: edge inference keeps privacy local, survives weak Wi‑Fi, and stays responsive when a dancer’s hand is the controller.',
+            ],
+          },
+          {
+            heading: 'Data & labeling',
+            paragraphs: [
+              'Training data is webcam-captured mudra imagery with class labels and gesture type metadata. The focus is asamyuta hastas—single-hand forms—filtered into a supervised classification set with numerical class IDs.',
+              'Collection emphasized different camera angles, orientations, and lighting so the system generalizes beyond a single studio setup—important when the same model has to work across dancers and rooms.',
+            ],
+          },
+          {
+            heading: 'Model & pipeline',
+            paragraphs: [
+              'We originally explored a YOLO-Pose → keypoints → MLP path, then shipped an image-trained ResNet-18 CNN instead: camera → ResNet-18 → features → softmax class output. Supervised training with learning-rate and augmentation tuning kept the stack lean enough for Jetson deployment.',
+              'Validation used an 80/20 split with accuracy, precision/recall, and F1 so we could catch overfitting and map which visually similar mudras still confuse the model.',
+            ],
+          },
+          {
+            heading: 'Evaluation',
+            paragraphs: [
+              'Testing covered held-out samples and live webcam input, watching both classification accuracy and prediction stability. Hard cases match the domain: occlusion, near-twin gestures, and limited timeline for polish.',
+              'Reported test accuracy sits around 46% macro F1 ~0.43 across evaluated classes—honest numbers for a fine-grained gesture set, with stronger classes (e.g. Shikhara, Alapadma, Pataka) and clear failure modes (e.g. Ardhapataka) documented in the slides below.',
+            ],
+          },
+          {
+            heading: 'Who it’s for',
+            paragraphs: [
+              'Artists & installers: a culturally specific gesture vocabulary as a live sensor—trigger light, sound, or projection from authentic hasta forms without forcing dancers onto generic “hand tracking” UX.',
+              'Engineers & employers: end-to-end CV on constrained hardware—dataset discipline, ResNet training, ONNX/TensorRT optimization, and a webcam→Jetson→label loop you can demo in person.',
+            ],
+          },
+          {
+            heading: 'Slides',
+            paragraphs: [],
+            galleries: [
+              {
+                layout: 'preview',
+                images: Array.from({ length: 13 }, (_, i) => ({
+                  src: `https://res.cloudinary.com/ddcf7lxh1/image/upload/pg_${i + 1},f_jpg,q_auto,w_1400/v1787245956/Hasta_Detection_Program_-_Final_Presentation_1_ma7btm.jpg`,
+                  caption: `Slide ${i + 1}`,
+                })),
+              },
             ],
           },
         ],
