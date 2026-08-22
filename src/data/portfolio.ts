@@ -341,12 +341,16 @@ export const portfolioProjects: ProjectEntry[] = [
             heading: 'Build',
             paragraphs: [
               'The front end is React. Supabase backs the product: auth-ish patterns aside, it is where the photo archive lives so the site can stay a browsable record as well as a calendar for what is happening next.',
-              'These screens tie that story together: the archive grid is the long-lived media record; events and long-form article layouts are how the collective announces and reflects on work in public.',
+              'These screens tie that story together: the archive grid is the long-lived media record; the issues index is how editorial drops stay browsable; events and long-form article layouts are how the collective announces and reflects on work in public.',
             ],
             figures: [
               {
                 src: '/PortfolioFiles/technology/ThirdSpaceDigital/photoarchives.webp',
                 caption: 'Photo archive surface backed by Supabase—browsable history of the collective’s media.',
+              },
+              {
+                src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1787363315/1morephoto3sd_aqrtru.png',
+                caption: 'All Issues index: masonry editorial grid for the collective’s latest drops and features.',
               },
               {
                 src: '/PortfolioFiles/technology/ThirdSpaceDigital/event.webp',
