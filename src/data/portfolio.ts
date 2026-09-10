@@ -1,3 +1,5 @@
+import { raindancingWorks } from './raindancingWorks'
+
 export type Discipline = 'art' | 'technology' | 'media'
 
 export const DISCIPLINE_LABELS: Record<Discipline, string> = {
@@ -27,6 +29,8 @@ export interface ProjectDetailGallery {
   buttonLabel?: string
   expandable?: boolean
   layout?: 'mosaic' | 'stack' | 'preview'
+  /** When true, show figure captions under images / in lightbox. */
+  showCaptions?: boolean
   images: ProjectDetailFigure[]
 }
 
@@ -995,18 +999,18 @@ export const portfolioProjects: ProjectEntry[] = [
         ],
       },
       {
-        slug: 'seven00hills',
-        title: 'Seven00Hills',
+        slug: 'seven-hills',
+        title: 'Seven Hills',
         disciplines: ['art', 'media'],
         useTechnologyPresentation: true,
-        summary: 'Music and visual work for the Seven00Hills project—releases, direction, and linked media.',
+        summary: 'Music and visual work for the Seven Hills project—releases, direction, and linked media.',
         year: '2026',
         tags: ['Music', 'Music video'],
         youtubeVideoId: 'qipmjdrbog8',
         thumbnailSrc: 'https://img.youtube.com/vi/qipmjdrbog8/maxresdefault.jpg',
         externalLinks: [
           {
-            label: '@seven00hills',
+            label: 'Seven Hills',
             href: 'https://www.instagram.com/seven00hills/',
           },
           {
@@ -1024,7 +1028,8 @@ export const portfolioProjects: ProjectEntry[] = [
           {
             heading: 'About',
             paragraphs: [
-              'Seven00Hills is a music project spanning releases and visual work. Listen on Spotify, follow on Instagram, or watch the featured video above.',
+              'Seven Hills is a music project spanning releases and visual work. Listen on Spotify, follow on Instagram, or watch the featured video above.',
+              'मेला - mela was shown in the UTD SP/N Gallery.',
             ],
           },
         ],
@@ -1095,21 +1100,12 @@ export const portfolioProjects: ProjectEntry[] = [
             galleries: [
               {
                 heading: 'Works',
-                layout: 'stack',
-                images: [
-                  {
-                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775719788/raindancing1_ycsv3h.png',
-                    caption: 'RainDancing work 1.',
-                  },
-                  {
-                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775719786/raindancing2_mdkq3q.png',
-                    caption: 'RainDancing work 2.',
-                  },
-                  {
-                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/v1775719866/raindancing3_umeeth.png',
-                    caption: 'RainDancing work 3.',
-                  },
-                ],
+                layout: 'mosaic',
+                showCaptions: true,
+                images: raindancingWorks.map((work) => ({
+                  src: work.src,
+                  caption: work.caption,
+                })),
               },
             ],
           },
@@ -1132,7 +1128,7 @@ export const portfolioInfoSections: InformationSection[] = [
       { label: 'Instagram', href: 'https://www.instagram.com/prabhasgade/' },
       { label: 'X', href: 'https://x.com/prabhasgade333' },
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prabhasgade/' },
-      { label: 'View Resume', href: '/PrabhasGade2026Resume.pdf' },
+      { label: 'View Resume', href: '/PrabhasGadeResume2026CS.pdf' },
 
     ],
   },
@@ -1160,6 +1156,11 @@ export const portfolioInfoSections: InformationSection[] = [
   },
 ]
 
+const projectSlugAliases: Record<string, string> = {
+  seven00hills: 'seven-hills',
+}
+
 export function getProjectBySlug(slug: string): ProjectEntry | undefined {
-  return portfolioProjects.find((p) => p.slug === slug)
+  const resolved = projectSlugAliases[slug] ?? slug
+  return portfolioProjects.find((p) => p.slug === resolved)
 }

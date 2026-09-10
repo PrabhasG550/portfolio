@@ -133,7 +133,13 @@ export function ProjectDetail({
   )
 }
 
-function SectionFigure({ figure }: { figure: ProjectDetailFigure }) {
+function SectionFigure({
+  figure,
+  showCaption = false,
+}: {
+  figure: ProjectDetailFigure
+  showCaption?: boolean
+}) {
   const [hidden, setHidden] = useState(false)
   if (hidden) return null
   return (
@@ -146,6 +152,9 @@ function SectionFigure({ figure }: { figure: ProjectDetailFigure }) {
         decoding="async"
         onError={() => setHidden(true)}
       />
+      {showCaption && figure.caption ? (
+        <figcaption className="project-detail__figure-caption">{figure.caption}</figcaption>
+      ) : null}
     </figure>
   )
 }
@@ -154,6 +163,7 @@ function SectionGallery({ gallery }: { gallery: ProjectDetailGallery }) {
   const layout = gallery.layout ?? 'mosaic'
   const mosaic = layout === 'mosaic'
   const preview = layout === 'preview'
+  const showCaptions = Boolean(gallery.showCaptions)
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [previewIndex, setPreviewIndex] = useState(0)
 
@@ -255,7 +265,7 @@ function SectionGallery({ gallery }: { gallery: ProjectDetailGallery }) {
   }
 
   return (
-    <div className="project-detail__gallery">
+    <div className={`project-detail__gallery${showCaptions ? ' project-detail__gallery--captions' : ''}`}>
       {gallery.heading ? <h3 className="project-detail__gallery-heading">{gallery.heading}</h3> : null}
       <div className={`project-detail__gallery-grid project-detail__gallery-grid--${layout}`}>
         {gallery.images.map((figure, i) => (
@@ -265,12 +275,12 @@ function SectionGallery({ gallery }: { gallery: ProjectDetailGallery }) {
                 type="button"
                 className="project-detail__lightbox-trigger"
                 onClick={() => setActiveIndex(i)}
-                aria-label="Open photo"
+                aria-label={figure.caption ? `Open ${figure.caption}` : 'Open photo'}
               >
-                <SectionFigure figure={figure} />
+                <SectionFigure figure={figure} showCaption={showCaptions} />
               </button>
             ) : (
-              <SectionFigure figure={figure} />
+              <SectionFigure figure={figure} showCaption={showCaptions} />
             )}
           </div>
         ))}
@@ -295,9 +305,12 @@ function SectionGallery({ gallery }: { gallery: ProjectDetailGallery }) {
             <img
               className="project-detail__lightbox-img"
               src={gallery.images[activeIndex]?.src}
-              alt=""
+              alt={gallery.images[activeIndex]?.caption || ''}
               decoding="async"
             />
+            {showCaptions && gallery.images[activeIndex]?.caption ? (
+              <p className="project-detail__lightbox-caption">{gallery.images[activeIndex]?.caption}</p>
+            ) : null}
             {gallery.images.length > 1 ? (
               <>
                 <button

@@ -1,0 +1,58 @@
+# Pulls new RainDancing Instagram posts → Cloudinary → gallery data on main.
+# Fully hands-off once secrets are set (see .env.example).
+#
+# Required repo secrets:
+#   IG_SESSIONID
+#   CLOUDINARY_URL   (or CLOUDINARY_CLOUD_NAME + CLOUDINARY_API_KEY + CLOUDINARY_API_SECRET)
+# Optional:
+#   IG_CSRFTOKEN
+name: Sync RainDancing
+
+on:
+  schedule:
+    # Daily 14:00 UTC (~9am CT)
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-raindancing
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Sync from Instagram
+        env:
+          CI: 'true'
+          SYNC_REQUIRE_SESSION: '1'
+          IG_SESSIONID: ${{ secrets.IG_SESSIONID }}
+          IG_CSRFTOKEN: ${{ secrets.IG_CSRFTOKEN }}
+          CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        run: node scripts/syncRainDancing.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/raindancing-works.json src/data/raindancingWorks.ts
+          if git diff --staged --quiet; then
+            echo "No gallery changes."
+            exit 0
+          fi
+          git commit -m "chore: sync RainDancing works from Instagram"
+          git push

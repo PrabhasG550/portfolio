@@ -1858,9 +1858,28 @@ p {
   display: block;
 }
 
-/* Captions intentionally hidden (gallery-first presentation). */
+/* Captions hidden by default (gallery-first). Opt in with gallery.showCaptions. */
 .project-detail__figure-caption {
   display: none;
+  margin: 8px 0 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.project-detail__gallery--captions .project-detail__figure-caption {
+  display: block;
+}
+
+.project-detail__lightbox-caption {
+  margin: 12px 0 0;
+  max-width: min(90vw, 52rem);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #f5f5f5;
 }
 
 .project-detail__sections {

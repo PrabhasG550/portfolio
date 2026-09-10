@@ -122,7 +122,12 @@ function LegacyProjectRedirect() {
   if (!project) {
     return <Navigate to="/work" replace />
   }
-  return <Navigate to={`${project.navCategory === 'in-progress' ? '/in-progress' : '/work'}/${projectSlug}`} replace />
+  return (
+    <Navigate
+      to={`${project.navCategory === 'in-progress' ? '/in-progress' : '/work'}/${project.slug}`}
+      replace
+    />
+  )
 }
 
 function WorkScreen() {
@@ -283,6 +288,12 @@ function ProjectDetailScreen() {
 
   if (!project) {
     return <Navigate to="/work" replace />
+  }
+
+  if (projectSlug !== project.slug) {
+    const base = project.navCategory === 'in-progress' ? '/in-progress' : '/work'
+    const query = searchParams.toString()
+    return <Navigate to={`${base}/${project.slug}${query ? `?${query}` : ''}`} replace />
   }
 
   const shellThemed = themed ? ' project-shell--themed' : ''
