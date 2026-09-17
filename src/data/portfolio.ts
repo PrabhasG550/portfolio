@@ -1029,7 +1029,6 @@ export const portfolioProjects: ProjectEntry[] = [
             heading: 'About',
             paragraphs: [
               'Seven Hills is a music project spanning releases and visual work. Listen on Spotify, follow on Instagram, or watch the featured video above.',
-              'मेला - mela was shown in the UTD SP/N Gallery.',
             ],
           },
         ],
@@ -1096,6 +1095,7 @@ export const portfolioProjects: ProjectEntry[] = [
             paragraphs: [
               'RainDancing revolves around translating strong emotions into compact, immersive painting experiences. The posted works are artifacts of that process rather than isolated images.',
               'Each painting is paired with music as part of the piece itself, not as background. In some works, I use gravity painting by mixing water with paint to shape flow and texture.',
+              'मेला - mela was shown in the UTD SP/N Gallery.',
             ],
             galleries: [
               {
