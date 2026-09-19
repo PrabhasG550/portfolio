@@ -163,6 +163,8 @@ p {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0;
+  color: inherit;
+  transition: color var(--transition);
 }
 
 .brand-mark {
@@ -170,6 +172,7 @@ p {
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
+  color: inherit;
 }
 
 .brand-mark__name {
@@ -177,6 +180,8 @@ p {
   font-size: 44px;
   font-weight: 500;
   line-height: 1.08;
+  color: inherit;
+  transition: color var(--transition);
 }
 
 .brand-mark__byline {
@@ -185,7 +190,8 @@ p {
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  color: var(--text);
+  color: inherit;
+  transition: color var(--transition);
 }
 
 .site-title--footer {
@@ -1584,7 +1590,10 @@ p {
   background: transparent;
 }
 
-.project-shell--themed .site-title {
+.project-shell--themed .site-title,
+.project-shell--themed .brand-mark,
+.project-shell--themed .brand-mark__name,
+.project-shell--themed .brand-mark__byline {
   color: var(--project-text);
 }
 

@@ -29,7 +29,11 @@ function ProjectCard({ project }: { project: ProjectEntry }) {
     <article
       className="project-card"
       id={project.slug}
-      onClick={() => navigate(`/work/${project.slug}${workLinkSearchFromParams(searchParams)}`)}
+      onClick={() =>
+        navigate(
+          `${project.navCategory === 'in-progress' ? '/in-progress' : '/work'}/${project.slug}${workLinkSearchFromParams(searchParams)}`,
+        )
+      }
     >
       {richTech ? (
         <TechnologyCardArtwork

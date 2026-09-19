@@ -371,6 +371,7 @@ export const portfolioProjects: ProjectEntry[] = [
       {
         slug: 'tmoodbile',
         title: 'T-Moodbile',
+        navCategory: 'in-progress',
         disciplines: ['technology'],
         useTechnologyPresentation: true,
         summary:
@@ -527,6 +528,7 @@ export const portfolioProjects: ProjectEntry[] = [
       {
         slug: 'project-pawrkour',
         title: 'Project Pawrkour',
+        navCategory: 'in-progress',
         disciplines: ['technology', 'media'],
         useTechnologyPresentation: true,
         summary:

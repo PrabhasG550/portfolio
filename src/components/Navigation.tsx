@@ -555,7 +555,7 @@ function SectionLinks({
                 to={`/in-progress${workSearchSuffix}`}
                 onClick={() => onNavigate?.()}
               >
-                In Progress
+                WIP/Archive
               </Link>
             ) : (
               <button
@@ -563,11 +563,11 @@ function SectionLinks({
                 onClick={handleInProgressMobileTap}
                 type="button"
               >
-                In Progress
+                WIP/Archive
               </button>
             )}
             {inProgressTreeOpen && effectiveWorkDisciplineFilters ? (
-              <div className="work-filter-row" role="group" aria-label="Filter in progress by discipline">
+              <div className="work-filter-row" role="group" aria-label="Filter WIP/Archive by discipline">
                 <WorkFilterIcon className="work-filter-row__icon" />
                 <div className="work-filter-row__list">
                   {ALL_DISCIPLINES.map((d) => {
