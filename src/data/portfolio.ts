@@ -22,6 +22,8 @@ export interface ProjectExternalLink {
 export interface ProjectDetailFigure {
   src: string
   caption: string
+  /** Inline video instead of a still. */
+  media?: 'image' | 'video'
 }
 
 export interface ProjectDetailGallery {
@@ -117,6 +119,113 @@ export const portfolioOwner = {
 }
 
 export const portfolioProjects: ProjectEntry[] = [
+      {
+        slug: 'sunyata',
+        title: 'शून्यता (Śūnyatā)',
+        disciplines: ['art', 'technology'],
+        useTechnologyPresentation: true,
+        disableThumbnailShellTheme: true,
+        summary:
+          'Nothingness, held in place. An attempt at cyber primitive art: three paintings and a ring of charged objects make an ego, while a television loops a window into the void.',
+        year: '2026',
+        tags: ['Acrylic', 'TouchDesigner', 'DaVinci Resolve', 'Installation'],
+        thumbnailSrc:
+          'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1791333963/IMG_9996_xiyrm4.jpg',
+        artwork:
+          'linear-gradient(160deg, #111 0%, #1a1a1a 46%, #0a0a0a 100%), radial-gradient(circle at 70% 30%, rgba(255,255,255,0.08), transparent 28%)',
+        detailSections: [
+          {
+            heading: 'Void',
+            paragraphs: [
+              'शून्यता (Śūnyatā) means nothingness, void. The piece is acrylic on canvas panels, with plastic wrap, wallet leather, fabric, stones, a plant, and a rakhi gathered around a television. Nothing in that ring is glued. The objects stay by gravity and friction.',
+              'Each object has its own charge. Together they make an ego. The television is the connection to void—a window to awareness. A USB stick loops the image endlessly.',
+            ],
+          },
+          {
+            heading: 'மூன்று மகள்கள்',
+            paragraphs: [
+              'மூன்று மகள்கள் (Mūnṟu Makaḷkaḷ) is the three-canvas collection. The paintings are the three nāḍīs, the three bloodstreams of the goddess Chinnamasta. Each is an energy layer, from lowest to highest.',
+              'இடைகலை (Idaikalai) is mostly red, with hints of dark gray. பிங்கலை (Pingalai) is mostly dark gray, with a rectangular pink accent. சுழுமுனை (Suzhumunai) is silver, marked with blood pink.',
+            ],
+          },
+          {
+            heading: 'The piece',
+            paragraphs: [
+              'The image on the screen was made in DaVinci Resolve and TouchDesigner.',
+            ],
+            galleries: [
+              {
+                layout: 'stack',
+                showCaptions: true,
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/video/upload/q_auto/v1791334065/IMG_0026_a1a3h4.mp4',
+                    caption: 'Final piece',
+                    media: 'video',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1791334058/IMG_0027_ff1h4z.jpg',
+                    caption: 'Wood table',
+                    media: 'image',
+                  },
+                ],
+              },
+              {
+                layout: 'stack',
+                showCaptions: true,
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/video/upload/q_auto/v1791336036/Finalvisualizer_1_mge6p2.mp4',
+                    caption: 'White circles',
+                    media: 'video',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/video/upload/q_auto/v1791335883/Sunyatamovfinal_sleksr.mp4',
+                    caption: 'Textured ring',
+                    media: 'video',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            heading: 'Process',
+            paragraphs: [],
+            galleries: [
+              {
+                layout: 'stack',
+                showCaptions: true,
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1791333963/9662951A-08C8-44B4-A745-857CF7BF2AAC_i7j6tb.jpg',
+                    caption: 'மூன்று மகள்கள் (Mūnṟu Makaḷkaḷ)',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1791333961/IMG_9979_ae7iwe.jpg',
+                    caption: 'இடைகலை (Idaikalai)',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1791333961/IMG_9980_vmfjuz.jpg',
+                    caption: 'பிங்கலை (Pingalai)',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1791333962/IMG_9981_r137y1.jpg',
+                    caption: 'சுழுமுனை (Suzhumunai)',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1791333962/IMG_9996_wulmty.jpg',
+                    caption: 'On the floor',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1791333962/IMG_0010_bpzhrq.jpg',
+                    caption: 'Setting the screen',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
       {
         slug: 'tactile',
         title: 'Tactile',
@@ -1012,8 +1121,8 @@ export const portfolioProjects: ProjectEntry[] = [
         thumbnailSrc: 'https://img.youtube.com/vi/qipmjdrbog8/maxresdefault.jpg',
         externalLinks: [
           {
-            label: 'Seven Hills',
-            href: 'https://www.instagram.com/seven00hills/',
+            label: 'Instagram',
+            href: 'https://www.instagram.com/userjsjsjsjsjsjs700/',
           },
           {
             label: 'YouTube',

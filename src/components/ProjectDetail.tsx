@@ -133,6 +133,10 @@ export function ProjectDetail({
   )
 }
 
+function isVideoFigure(figure: ProjectDetailFigure) {
+  return figure.media === 'video' || /\.(mp4|webm|mov)(\?|$)/i.test(figure.src)
+}
+
 function SectionFigure({
   figure,
   showCaption = false,
@@ -142,16 +146,30 @@ function SectionFigure({
 }) {
   const [hidden, setHidden] = useState(false)
   if (hidden) return null
+  const video = isVideoFigure(figure)
   return (
     <figure className="project-detail__figure">
-      <img
-        className="project-detail__figure-img"
-        src={figure.src}
-        alt={figure.caption}
-        loading="lazy"
-        decoding="async"
-        onError={() => setHidden(true)}
-      />
+      {video ? (
+        <video
+          className="project-detail__figure-video"
+          src={figure.src}
+          controls
+          playsInline
+          loop
+          muted
+          preload="metadata"
+          onError={() => setHidden(true)}
+        />
+      ) : (
+        <img
+          className="project-detail__figure-img"
+          src={figure.src}
+          alt={figure.caption}
+          loading="lazy"
+          decoding="async"
+          onError={() => setHidden(true)}
+        />
+      )}
       {showCaption && figure.caption ? (
         <figcaption className="project-detail__figure-caption">{figure.caption}</figcaption>
       ) : null}

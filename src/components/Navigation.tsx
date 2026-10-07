@@ -193,6 +193,8 @@ export function MobileTopBar({
   )
 }
 
+const menuFade = { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const }
+
 export function MobileMenuOverlay({
   open,
   activeWork,
@@ -201,6 +203,9 @@ export function MobileMenuOverlay({
   onClose,
   workDisciplineFilters,
 }: MobileMenuOverlayProps) {
+  const prefersReducedMotion = useReducedMotion()
+  const fade = prefersReducedMotion ? { duration: 0 } : menuFade
+
   return (
     <AnimatePresence>
       {open ? (
@@ -209,13 +214,14 @@ export function MobileMenuOverlay({
           className="mobile-menu-overlay"
           exit={{ opacity: 0 }}
           initial={{ opacity: 0 }}
+          transition={fade}
         >
           <motion.div
             animate={{ opacity: 1, y: 0 }}
             className="mobile-menu-overlay__panel"
-            exit={{ opacity: 0, y: 18 }}
-            initial={{ opacity: 0, y: 18 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0, y: prefersReducedMotion ? 0 : 18 }}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 18 }}
+            transition={fade}
           >
             <SectionLinks
               activeWork={activeWork}
@@ -555,7 +561,7 @@ function SectionLinks({
                 to={`/in-progress${workSearchSuffix}`}
                 onClick={() => onNavigate?.()}
               >
-                WIP/Archive
+                Archived
               </Link>
             ) : (
               <button
@@ -563,11 +569,11 @@ function SectionLinks({
                 onClick={handleInProgressMobileTap}
                 type="button"
               >
-                WIP/Archive
+                Archived
               </button>
             )}
             {inProgressTreeOpen && effectiveWorkDisciplineFilters ? (
-              <div className="work-filter-row" role="group" aria-label="Filter WIP/Archive by discipline">
+              <div className="work-filter-row" role="group" aria-label="Filter Archived by discipline">
                 <WorkFilterIcon className="work-filter-row__icon" />
                 <div className="work-filter-row__list">
                   {ALL_DISCIPLINES.map((d) => {

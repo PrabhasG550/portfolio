@@ -739,11 +739,22 @@ p {
 }
 
 .mobile-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1px 30px 0;
   background: #fff;
+}
+
+body.menu-open .mobile-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
 }
 
 .mobile-topbar__title {
@@ -777,6 +788,10 @@ p {
   position: fixed;
   inset: 0;
   z-index: 20;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(18px);
 }
@@ -787,16 +802,16 @@ p {
   min-height: 100%;
   padding: 80px 30px 36px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .mobile-menu-overlay .section-links {
-  flex: 1;
-  min-height: 0;
+  flex: none;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .mobile-menu-overlay .section-links__work-block {
@@ -804,7 +819,7 @@ p {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .mobile-menu-overlay .section-links__work-block.section-links__work-block--expanded {
@@ -814,7 +829,7 @@ p {
 .mobile-menu-overlay .section-tree {
   flex: 0 1 auto;
   min-height: 0;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   max-width: 100%;
 }
@@ -829,26 +844,22 @@ p {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   max-width: 100%;
 }
 
-.mobile-menu-overlay .work-projects-scroll {
+.mobile-menu-overlay .work-projects-scroll,
+.mobile-menu-overlay .work-projects-scroll.work-projects-scroll--overflows {
   flex: 0 1 auto;
   min-height: 0;
-  max-height: min(38svh, calc(100svh - 420px));
-  overflow-x: hidden;
-  overflow-y: hidden;
-  overscroll-behavior: contain;
-  padding-right: 6px;
+  max-height: none;
+  overflow: visible;
+  overscroll-behavior: auto;
+  padding-right: 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
-
-.mobile-menu-overlay .work-projects-scroll.work-projects-scroll--overflows {
-  overflow-y: auto;
 }
 
 .mobile-menu-overlay .section-links__info-inline {
@@ -932,6 +943,16 @@ p {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.project-card__iframe--preview,
+.project-card__video--preview {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.project-card__video--preview {
+  object-fit: cover;
 }
 
 .project-card__artwork--thumb {
@@ -1861,10 +1882,12 @@ p {
   max-width: min(100%, 52rem);
 }
 
-.project-detail__figure-img {
+.project-detail__figure-img,
+.project-detail__figure-video {
   width: 100%;
   height: auto;
   display: block;
+  background: #0a0a0a;
 }
 
 /* Captions hidden by default (gallery-first). Opt in with gallery.showCaptions. */
