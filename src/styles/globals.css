@@ -975,6 +975,18 @@ body.menu-open .mobile-topbar {
   display: block;
 }
 
+#sunyata .project-card__thumb {
+  object-fit: contain;
+}
+
+#sunyata .project-card__artwork {
+  background-color: #000;
+}
+
+#sunyata .project-card__artwork::before {
+  display: none;
+}
+
 .project-card__thumb-scrim {
   position: absolute;
   inset: 0;
@@ -1531,6 +1543,14 @@ body.menu-open .mobile-topbar {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.project-detail--thumb-contain .project-detail__hero-thumb {
+  object-fit: contain;
+}
+
+.project-detail--thumb-contain .project-detail__hero {
+  background: #000;
 }
 
 .project-detail__hero-thumb-scrim {

@@ -30,7 +30,7 @@ export function ProjectDetail({
   }, [project.slug])
 
   return (
-    <article className={`project-detail project-detail--${viewport}`}>
+    <article className={`project-detail project-detail--${viewport}${project.slug === 'sunyata' ? ' project-detail--thumb-contain' : ''}`}>
       {isTechnology ? (
         <TechnologyDetailHero
           title={project.title}
