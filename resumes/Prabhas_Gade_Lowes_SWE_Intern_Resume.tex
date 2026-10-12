@@ -1,0 +1,149 @@
+% Lowe's Software Engineer Intern -- Innovate in Charlotte, Summer 2027
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2028}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Software Engineering, Database Systems, Operating Systems, Data Structures \& Algorithms, Computer Networks, Human--Computer Interaction}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Developed and tested clean, scalable React/Node.js product features in an Agile team, integrating REST APIs and MySQL to power real-time monitoring used by industrial associates and operators.}
+    \resumeItem{Participated in code reviews and CI/CD pipelines (GitHub, Docker) across the software development lifecycle, improving user efficiency by 1200\% with a customer-focused shortcut workflow.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {ThirdSpaceDigital}{Jan. 2026 -- Present}
+    {Frontend Developer \& Product Designer}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Collaborated cross-functionally on UX and product delivery, translating Figma designs into a React platform that attracted 300 users in week one and sustained roughly 55 daily visits.}
+    \resumeItem{Built intuitive user experiences for articles, events, and archives backed by Supabase, iterating after launch to improve engagement and reliability.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Wrote JavaScript/TypeScript-friendly React UIs and Python services for applications, guardrails, and PII encryption, delivering secure features for client-facing workflows.}
+    \resumeItem{Expanded automated testing to 95\% coverage and contributed to continuous improvement of delivery quality, raising AI-engine compliance by 20\%.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Built a React data visualization over Cassandra metrics and collaborated with managers and stakeholders, doubling insight output and earning a 98\% performance rating.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Leadership \& Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{JavaScript, React, Node.js, Python, GCP, PostgreSQL}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Shipped a scalable full-stack application on Google Cloud with Node.js/React services, automated monitoring, and data-driven insights for customer-facing analytics workflows.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{React, Node.js, FastAPI, Figma Plugin API}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Led product engineering for a real-time collaboration tool, partnering on UX and iterating four interaction designs to deliver an accessible, customer-focused experience.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{CSHaven / Coding for Medicine} $|$ \emph{Leadership}}{2020--2023}
+  \resumeItemListStart
+    \resumeItem{Co-founded and led campus/community STEM programs as Co-Founder \& Lead Teacher (CSHaven) and Co-Founder \& VP (Coding for Medicine), building collaborative learning experiences for students.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages \& Frameworks:} Java, Python, JavaScript, TypeScript, C\#, .NET, React, Node.js, FastAPI, SQL \\
+    \textbf{Cloud \& DevOps:} Google Cloud (GCP), AWS, Azure, GitHub, Jenkins, Docker, CI/CD, Agile, SDLC \\
+    \textbf{Collaboration:} Code Reviews, UX Collaboration, Product Partnership, Data Visualization, Problem-Solving, Communication
+  }}
+\end{itemize}
+
+\end{document}

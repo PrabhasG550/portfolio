@@ -1,0 +1,146 @@
+% TRC Software Engineer Intern -- Summer 2027
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2028}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Software Engineering, Database Systems, Operating Systems, Data Structures \& Algorithms, Computer Networks, Computer Vision, Statistics, Linear Algebra}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Built a React/Tailwind application for an industrial edge-computing RTU, integrating REST APIs and MySQL to support real-time equipment data management, evaluation, and presentation.}
+    \resumeItem{Translated regulatory requirements into an EULA acceptance screen and operator needs into monitoring workflows, improving user efficiency by 1200\% while supporting reliable field decisions.}
+    \resumeItem{Collaborated with an Agile engineering team and automated Docker/CI/CD delivery, reducing deployment failures, maintenance effort, and total cost of ownership.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Queried and evaluated Cassandra transaction and cluster data, transforming technical metrics into a React visualization that doubled actionable insight output.}
+    \resumeItem{Prepared and presented findings to 15+ project managers, earning a 98\% performance rating and enabling earlier identification of costly performance risks.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Developed Python/FastAPI and PostgreSQL services plus a React interface for applications, compliance guardrails, and PII encryption, centralizing client data workflows.}
+    \resumeItem{Expanded automated test coverage to 95\% with Cucumber, improving AI-engine compliance by 20\% and reducing production defects and debugging time.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Software Engineering Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Migrated MongoDB to PostgreSQL/Prisma and evaluated query performance, reducing response times by 60\% for a nonprofit serving students experiencing food insecurity.}
+    \resumeItem{Rebuilt the application in React/TypeScript and packaged it with Docker, improving maintainability and repeatable delivery for future project teams.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{MudraDetection} $|$ \emph{Python, PyTorch, ResNet-18, ONNX, TensorRT, NVIDIA Jetson}}{2025}
+  \resumeItemListStart
+    \resumeItem{Managed and labeled image data across varied lighting and camera angles; evaluated an edge-vision model using an 80/20 split, accuracy, precision, recall, and F1 metrics.}
+    \resumeItem{Deployed GPU-accelerated inference on field hardware and documented results, failure modes, and specifications in a technical presentation for engineering and installation use.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{Python, Node.js, PostgreSQL, Next.js, Google Cloud}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Aggregated, evaluated, and presented survey, social, and search-trend data in a dashboard with scheduled alerts, turning multi-source records into actionable client insights.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Programming \& Data:} Python, Java, C++, JavaScript, TypeScript, SQL, React, FastAPI, REST APIs, MySQL, PostgreSQL \\
+    \textbf{Engineering:} Data Entry, Data Management, Data Evaluation, Data Presentation, Technical Documentation, Research, Agile, Jira, Git/GitHub, Docker, CI/CD \\
+    \textbf{Productivity \& Design:} Microsoft Office, Excel, Word, PowerPoint, AutoCAD, Computer-Aided Design (CAD; robotics), Figma
+  }}
+\end{itemize}
+
+\end{document}

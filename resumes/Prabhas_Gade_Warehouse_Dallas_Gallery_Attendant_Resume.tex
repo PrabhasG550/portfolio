@@ -1,0 +1,159 @@
+% The Warehouse Dallas -- Gallery Attendant
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2027}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+\resumeSubHeadingListEnd
+
+\section{Artwork}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{We Drove North to the Farm} $|$ \emph{Artist book, Throughlines Gallery, UT Dallas}}{2026}
+  \resumeItemListStart
+    \resumeItem{Made an artist book for Throughlines Gallery in response to Jennifer Shaw's photograph \textit{We Drove North to the Farm}, and wrote the wall label for the show.}
+    \resumeItem{The book is a human and an angel at a farm. Shaw's photograph is a toy horse left after Hurricane Katrina. The label is about grief and how briefly an object lasts.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{RainDancing} $|$ \emph{Painting; SP/N Gallery, UT Dallas}}{2024}
+  \resumeItemListStart
+    \resumeItem{Paintings paired with a piece of music. Some are gravity paintings, water mixed into the pigment. \textit{Mela} was hung in the SP/N Gallery.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Indigo Magazine TX} $|$ \emph{Direction, styling, photography}}{2025--2026}
+  \resumeItemListStart
+    \resumeItem{Directed, styled, and photographed the Indigo OS set, then designed the article. On later pieces, contributed photographs and a photo gallery other articles could reuse.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Kindred} $|$ \emph{Short film}}{2026}
+  \resumeItemListStart
+    \resumeItem{Direction and cinematography for the short film \textit{Kindred}.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Leadership}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{CSHaven} $|$ \emph{Co-Founder and Lead Teacher}}{2020--2023}
+  \resumeItemListStart
+    \resumeItem{Taught the sessions, set the plan at the start, and stepped in when a group drifted.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Built the screen operators checked, so equipment problems showed up before work stopped. A shorter view of status and controls improved their efficiency by \textbf{1200\%}.}
+    \resumeItem{Both summers shipped on the same release path, so a missed step did not go out broken.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {ThirdSpaceDigital}{Jan. 2026 -- Present}
+    {Product Designer}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Looked after a public site for articles, events, issues, and a photo archive: \textbf{300} people in the first week, about \textbf{55} a day after.}
+    \resumeItem{Changed the pages where people got stuck.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Rebuilt the site for a campus food pantry and cut lookup time by \textbf{60\%} when students were waiting.}
+    \resumeItem{Left the project so the next person could run it, and the handoff did not drop the work.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Turned transaction records into a view that \textbf{doubled} what managers could act on, and presented it to \textbf{15+} of them (\textbf{98\%} rating).}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Studio:} painting, artist books, wall labels, photography, direction, cinematography, Figma; violin in orchestra through high school
+  }}
+\end{itemize}
+
+\end{document}

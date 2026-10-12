@@ -635,57 +635,6 @@ export const portfolioProjects: ProjectEntry[] = [
         ],
       },
       {
-        slug: 'project-pawrkour',
-        title: 'Project Pawrkour',
-        navCategory: 'in-progress',
-        disciplines: ['technology', 'media'],
-        useTechnologyPresentation: true,
-        summary:
-          'A Unity third-person parkour game: you play a cat breaking out of a lab, with wall-running, a full first level through an end scene, a rigged and animated hero, UI treated as a first-class art pass, and music that ramps with how fast the cat moves.',
-        year: '2024',
-        tags: ['Unity', 'C#', 'ShaderLab'],
-        externalLinks: [{ label: 'GitHub', href: 'https://github.com/PrabhasG550/Project-Pawkour' }],
-        thumbnailSrc: '/PortfolioFiles/technology/projectpawrkour/thumbnail.webp',
-        artwork:
-          'linear-gradient(145deg, #d8d8d8 0%, #d3d5d7 34%, #efefef 100%), radial-gradient(circle at 72% 22%, rgba(255,255,255,0.76), transparent 32%), radial-gradient(circle at 26% 74%, rgba(52,60,68,0.13), transparent 34%)',
-        detailSections: [
-          {
-            heading: 'Premise & feel',
-            paragraphs: [
-              'Project Pawrkour is built around readable, expressive traversal: the fantasy is simple (escape the lab as a cat) but the bar for feel is high—movement, camera, and audio all had to agree so speedrunning the level feels rewarding instead of sloppy.',
-              'The control presentation below is the same language players see in-game: we treated prompts and HUD reads as part of the art pass, not an afterthought.',
-            ],
-            figures: [
-              {
-                src: '/PortfolioFiles/technology/projectpawrkour/controls.webp',
-                caption: 'On-screen control and feedback layout: tying inputs to readable UI during parkour.',
-              },
-            ],
-          },
-          {
-            heading: 'What shipped in the slice',
-            paragraphs: [
-              'Core locomotion: run, jump, and wall-run with tuned acceleration and air control. One complete level with a dedicated end-of-level beat. A fully animated cat rig so personality reads in idle and motion. High-fidelity UI (menus, feedback, diegetic touches) rather than placeholder panels.',
-              'Audio reactivity: the score responds to gameplay—tempo and intensity follow the cat’s speed so the mix reinforces risk without fighting the player’s inputs.',
-              'The in-engine still shows the cat mid-level with final lighting and materials—the slice we used to validate camera distance, neon reads, and readability at speed.',
-            ],
-            figures: [
-              {
-                src: '/PortfolioFiles/technology/projectpawrkour/game+picture.webp',
-                caption: 'Gameplay capture: cat traversal, environment art, and camera framing from the first shippable level.',
-              },
-            ],
-          },
-          {
-            heading: 'Problems we had to solve',
-            paragraphs: [
-              'Animation consistency and blending so transitions between floor, air, and wall contact do not pop. Wall-run state needed careful verification so edge cases (corners, shallow angles, late jumps) did not desync the controller.',
-              'A neon-forward material pass leaned on a custom fragment shader; tuning emissive balance against lighting was finicky. Camera clipping through tight geometry needed iteration. Unity version control limitations slowed parallel work compared to a pure Git art pipeline.',
-            ],
-          },
-        ],
-      },
-      {
         slug: 'acm-media-dev-sage',
         title: 'ACM media/dev: SAGE',
         navCategory: 'in-progress',
@@ -727,6 +676,17 @@ export const portfolioProjects: ProjectEntry[] = [
               'The article is built with React and other front-end tooling so typography, pacing, and imagery read as a single editorial object on the web.',
             ],
             galleries: [
+              {
+                layout: 'stack',
+                showCaptions: true,
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/video/upload/f_mp4,q_auto/v1775709545/indigovideocompressed_y7smgj.mp4',
+                    caption: 'Title sequence',
+                    media: 'video',
+                  },
+                ],
+              },
               {
                 heading: 'Issue gallery',
                 layout: 'stack',

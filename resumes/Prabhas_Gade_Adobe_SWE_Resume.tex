@@ -1,0 +1,147 @@
+% Adobe -- Software Engineer, University Graduate
+% Expected graduation Dec 2026 -- June 2027 window: May 2027
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2027}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Data Structures \& Algorithms in Java, Python, C++, and JavaScript; Software Engineering; Human--Computer Interaction; Databases; Operating Systems}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Engineered an end-to-end JavaScript/React and Node.js monitoring workflow on AWS that surfaces equipment issues in real time, replacing manual status checks that previously let downtime reach operators unnoticed.}
+    \resumeItem{Shipped a shortcut-overview system that collapsed routine device controls into fewer interactions, improving operator efficiency by \textbf{1200\%} and cutting labor spent on repeat reviews across two internship terms.}
+    \resumeItem{Standardized Agile CI/CD and Docker delivery with code review from design through testing, debugging, deployment, and documentation, reducing environment drift and the cost of broken releases.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {ThirdSpaceDigital}{Jan. 2026 -- Present}
+    {Software Engineer \& Product Designer}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Designed and shipped an end-to-end JavaScript/React and Supabase publishing platform with designers, replacing scattered third-party tooling and attracting \textbf{300} users in week one with roughly \textbf{55} daily visits sustained for months.}
+    \resumeItem{Standardized reusable components, visual patterns, and usage documentation so article, event, issue, and archive surfaces stayed consistent and new pages stopped requiring one-off rebuilds.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Engineered Python services and a JavaScript UI for LLM guardrails and PII encryption on PostgreSQL and DynamoDB, replacing scattered manual handling of sensitive client data.}
+    \resumeItem{Raised automated test coverage to \textbf{95\%} through code review and debugging, improving AI-engine compliance by \textbf{20\%} and cutting defects that escaped into client environments.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Built a JavaScript reporting view over Cassandra transaction and cluster metrics that \textbf{doubled} actionable insight and replaced repetitive manual analysis for operations teams.}
+    \resumeItem{Presented findings to \textbf{15+} project managers (\textbf{98\%} rating), translating performance risks into decisions before they escalated into costly incidents.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{JavaScript, Python, Figma Plugin API, FastAPI, WebSockets}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Engineered an end-to-end Figma plugin that streams roughly \textbf{60 FPS} hand tracking into design actions, so designers can move and edit frames without a mouse or extra hardware.}
+    \resumeItem{Debugged four architecture iterations until false gesture triggers stopped interrupting the live workflow; used Copilot, Cursor, and Claude to prototype faster while keeping correctness in review.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{JavaScript, Python, Node.js, PostgreSQL, Gemini}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Shipped an end-to-end sentiment platform that checks customer mood every five minutes against a \textbf{70\%} threshold and sends deduplicated alerts, flagging decline before preventable churn.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:} Java, Python, C++, JavaScript, TypeScript, SQL, Node.js \\
+    \textbf{Engineering:} data structures, algorithms, end-to-end development, code review, testing, debugging, deployment, documentation, Agile \\
+    \textbf{Tools \& Platforms:} Git/GitHub, Docker, CI/CD, AWS, React, Figma, AI-assisted development (Copilot, Cursor, Claude); interested in Adobe Experience Manager, Creative Cloud, and Experience Platform
+  }}
+\end{itemize}
+
+\end{document}

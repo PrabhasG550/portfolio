@@ -1,0 +1,145 @@
+% RTX Software Engineering Co-Op -- Wilsonville, OR
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2028}
+    {B.S. Computer Science (STEM), Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Software Engineering, Computer Architecture, Digital Logic, Operating Systems, Linux/Unix, Data Structures \& Algorithms, Discrete Mathematics, Linear Algebra, Statistics, Computer Networks, Computer Vision}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Designed and developed software from functional and interface requirements for an industrial edge-computing RTU, integrating a React/Node.js/Tailwind UI with REST APIs and MySQL for real-time monitoring.}
+    \resumeItem{Performed system integration of UI, services, and persistent data in an Agile team; debugged hardware--software interface issues in lab-like device environments; improved operator efficiency by 1200\% with a shortcut workflow.}
+    \resumeItem{Created and maintained automated unit tests and CI/CD pipeline checks in Visual Studio Code and Git; developed requirement-based test procedures for configuration and monitoring features before production deployment.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Wrote Python services and React product features for compliance guardrails and PII encryption; applied software and hardware debugging practices across API and client failures.}
+    \resumeItem{Maintained Cucumber unit and integration tests to 95\% coverage and executed test procedures that improved AI-engine compliance by 20\% while reducing production defects.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Debugged Cassandra cluster and transaction data issues and built a React visualization that verified software performance through metric analysis, doubling actionable insight output.}
+    \resumeItem{Collaborated with engineers and stakeholders to document findings and present verified results to 15+ project managers (98\% performance rating).}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Software Engineering Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Completed system integration of a nonprofit application after migrating Svelte to React/TypeScript and MongoDB to PostgreSQL/Prisma, cutting query times by 60\%.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{MudraDetection} $|$ \emph{Python, C++, PyTorch, ONNX, TensorRT, NVIDIA Jetson}}{2025}
+  \resumeItemListStart
+    \resumeItem{Developed embedded computer-vision software on Jetson Orin Nano from camera interface requirements through on-device inference; optimized ResNet-18 with TensorRT for GPU-accelerated performance.}
+    \resumeItem{Created unit tests and evaluation procedures using accuracy, precision, recall, and F1; verified coverage across held-out and live webcam scenarios and documented failure modes.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Project Pawrkour} $|$ \emph{C\#, Unity, Visual Studio, ShaderLab}}{2024}
+  \resumeItemListStart
+    \resumeItem{Designed and debugged C\# gameplay systems in Visual Studio for wall-running and animation blending; verified component behavior through iterative lab-style playtesting and camera/collision integration fixes.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:} C, C\#, C++, Python, Java, JavaScript, TypeScript, SQL \\
+    \textbf{Frameworks \& Tools:} React, Angular, Node.js, Django, Visual Studio, Eclipse, Git, Docker, CI/CD, Linux/Unix \\
+    \textbf{Systems \& Verification:} Software Development, Embedded Systems, System Integration, Unit Testing, Test Procedures, Test Coverage Analysis, Debugging, Agile, Mathematics (Discrete Math, Linear Algebra, Statistics), STEM
+  }}
+\end{itemize}
+
+\end{document}

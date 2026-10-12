@@ -1,0 +1,145 @@
+% Visa New College Graduate Software Engineer
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2027}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Software Engineering, Database Systems, Operating Systems, Linux/Unix, Data Structures \& Algorithms, Advanced Algorithms, Computer Networks}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Built an end-to-end React/Tailwind and REST/MySQL solution for an edge-computing RTU, delivering optimized, secure, and scalable real-time monitoring aligned with operator and business needs.}
+    \resumeItem{Collaborated cross-functionally in an Agile environment to improve user efficiency by 1200\%; automated repeatable delivery with Docker and CI/CD to reduce deployment defects and maintenance cost.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Developed Python/FastAPI and PostgreSQL services plus a React application for LLM guardrails and PII encryption, translating product and technology objectives into secure client workflows.}
+    \resumeItem{Applied software engineering and testing best practices to reach 95\% unit-test coverage with Cucumber, improving AI-engine compliance by 20\% and reducing production debugging time.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Built a React/Cassandra data-visualization application that converted payment transaction and cluster metrics into actionable views, doubling insight output and reducing manual analysis.}
+    \resumeItem{Communicated findings to 15+ project managers and earned a 98\% performance rating, helping a cross-functional financial-technology team diagnose costly performance risks earlier.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Software Engineering Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Rebuilt a nonprofit web application from Svelte in React/TypeScript and migrated MongoDB to PostgreSQL/Prisma, optimizing query performance by 60\% for staff serving students.}
+    \resumeItem{Containerized the end-to-end solution with Docker, improving version consistency, maintainability, and reliable delivery across development environments.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{Go, Angular, Vue.js, React, Node.js, Selenium, Power BI, Gemini}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Built end-to-end sentiment versions spanning Go services, Angular/Vue.js/React frontends, and REST APIs, integrating Generative AI for transcription, sentiment analysis, and prompt-designed insights.}
+    \resumeItem{Automated ingestion and regression coverage with Selenium; visualized customer metrics in Power BI and monitored five-minute alerts to improve root-cause follow-up.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{React, FastAPI, WebSockets, MongoDB, MediaPipe}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Used root cause analysis to tune gesture thresholds in a roughly 60 FPS Figma integration, completing four architecture iterations to improve performance, stability, and usability.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages \& Web:} Java, Python, C++, C\#, .NET, Go, JavaScript, TypeScript, React.js, Angular, Vue.js, Next.js, Node.js \\
+    \textbf{Cloud, APIs \& Data:} AWS, Google Cloud, REST APIs, MySQL, PostgreSQL, MongoDB, Cassandra, Power BI, Data Visualization \\
+    \textbf{Engineering \& AI:} Git Version Control, Docker, CI/CD Automation, Selenium, Cucumber, Unit Testing, Agile, Code Review, Root Cause Analysis, Generative AI, Prompt Design
+  }}
+\end{itemize}
+
+\end{document}

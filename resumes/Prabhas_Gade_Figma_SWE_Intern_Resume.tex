@@ -1,0 +1,146 @@
+% Figma Software Engineering Intern -- Product Engineering
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2028}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Data Structures \& Algorithms, Advanced Algorithms, Software Engineering, Human--Computer Interaction, Databases, Operating Systems, Computer Networks}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Built and shipped full-stack, user-facing React/Tailwind product features for an edge-computing RTU, integrating REST APIs and MySQL into real-time monitoring and configuration workflows.}
+    \resumeItem{Collaborated with users and an Agile engineering team to break down features and iterate on a shortcut workflow, improving user efficiency by 1200\%; maintained Docker/CI/CD deployment infrastructure.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {ThirdSpaceDigital}{2026}
+    {Frontend Developer \& Product Designer}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Translated Figma prototypes into a responsive React/Supabase product spanning articles, events, issues, and photo archives, creating reusable workflows from design through production.}
+    \resumeItem{Ran growth-oriented experiments and iterated after launch, attracting 300 users in the first week, sustaining roughly 55 daily visits, and retaining recurring traffic for months.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Developed Python/FastAPI and PostgreSQL services plus a React UI for LLM guardrails and PII encryption, delivering privacy and security features across infrastructure and product layers.}
+    \resumeItem{Built and maintained Cucumber tests to 95\% coverage, participated in peer code review, and improved AI-engine compliance by 20\% while reducing production defects.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Software Engineering Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Modernized a nonprofit platform from Svelte to React/TypeScript and MongoDB to PostgreSQL/Prisma, improving query performance by 60\% and simplifying future development.}
+    \resumeItem{Partnered with teammates to plan, document, and ship Dockerized features and infrastructure for staff serving students experiencing food insecurity.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{Figma Plugin API, FigJam, React, FastAPI, WebSockets, MediaPipe}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Built a real-time Figma collaboration tool that converts roughly 60 FPS hand tracking into design actions and synchronizes editable frames through a WebSocket bridge.}
+    \resumeItem{Designed the pull/edit/push system from Figma snapshots to derived frames; iterated through four gesture-map rewrites and added four responsive breakpoints plus accessible input fallbacks.}
+    \resumeItem{Used GitHub Copilot, Cursor, and Claude as AI-assisted development tools to prototype, debug, and optimize code; used FigJam to map product flows and team decisions.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{TypeScript, Next.js, Node.js, PostgreSQL, Gemini}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Collaborated with a three-person software/design team to ship an end-to-end AI sentiment workflow, from Figma planning through APIs, testing, deployment, monitoring, and iteration.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages \& Product:} C++, JavaScript, TypeScript, Python, Java, React.js, Next.js, Tailwind CSS, Figma Plugin API \\
+    \textbf{Platform \& Security:} Distributed Systems, System Design, REST APIs, WebSockets, FastAPI, Node.js, PostgreSQL, MongoDB, Supabase, Docker, CI/CD, PII Encryption \\
+    \textbf{Engineering:} Data Structures \& Algorithms, Clean Code, Unit Testing, QA, Peer Code Review, Documentation, Agile, Git/GitHub, GitHub Copilot, Cursor, Claude, ChatGPT, FigJam
+  }}
+\end{itemize}
+
+\end{document}

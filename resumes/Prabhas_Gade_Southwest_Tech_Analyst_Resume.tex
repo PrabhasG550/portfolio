@@ -1,0 +1,146 @@
+% Southwest Airlines -- Associate Technology Analyst, Direct College Hire
+% Technology Vendor Management (second pass)
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2027}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Software Engineering, Database Systems, Data Structures \& Algorithms, Operating Systems, Computer Networks, Object-Oriented Design}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Gathered requirements from operators and Technology Leaders, then translated business needs into AWS-backed monitoring workflows that surfaced equipment issues before downtime.}
+    \resumeItem{Partnered cross-functionally in Agile delivery to redesign a high-friction process; a React/Node.js shortcut improved efficiency by \textbf{1200\%} and cut repeat manual cost.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Analyzed compliance gaps and built Python/SQL services on PostgreSQL and DynamoDB for guardrails and PII encryption, replacing scattered manual handling.}
+    \resumeItem{Raised automated test coverage to \textbf{95\%}, improving compliance by \textbf{20\%} and reducing defects that drove costly rework; documented requirements and verification steps.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Analyzed Cassandra transaction metrics and shipped a React reporting view that \textbf{doubled} actionable insight versus repetitive manual review.}
+    \resumeItem{Presented findings to \textbf{15+} project managers (\textbf{98\%} rating), articulating root causes and recommendations that reduced escalation risk.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Software Engineering Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Modeled and redesigned nonprofit food-assistance workflows into React and PostgreSQL services, cutting query times by \textbf{60\%} during peak demand.}
+    \resumeItem{Managed multiple workstreams with staff stakeholders and documented delivery steps that shortened onboarding for the next developers.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{Python, SQL, JavaScript, AWS, Power BI, Excel, PostgreSQL, Gemini}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Built a customer-sentiment reporting platform that ingests surveys and social/search signals so teams can identify trends without manual spreadsheet analysis.}
+    \resumeItem{Visualized KPIs in Power BI and Excel; monitored five-minute checks against a \textbf{70\%} threshold with deduplicated alerts before preventable churn.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{React, FastAPI, JavaScript, MongoDB, MediaPipe}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Applied systems thinking and root-cause analysis across four architecture iterations so false gesture triggers stopped interrupting a live Figma workflow at roughly \textbf{60 FPS}.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages \& Scripting:} Python, SQL, Java, JavaScript, Node.js, TypeScript, C\# \\
+    \textbf{Cloud \& Data:} AWS (Lambda, S3, DynamoDB), PostgreSQL, MySQL, Cassandra, Power BI, Excel, data visualization, reporting \\
+    \textbf{Analysis \& Delivery:} business analysis, requirements gathering, process improvement, Agile, stakeholder communication, cost/efficiency analysis, root cause analysis
+  }}
+\end{itemize}
+
+\end{document}

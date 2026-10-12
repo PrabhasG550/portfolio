@@ -1,0 +1,146 @@
+% Southwest Airlines -- Associate Software Engineer, Direct College Hire
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2027}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Data Structures \& Algorithms, Software Engineering, Database Systems, Operating Systems, Object-Oriented Design, Computer Networks}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Designed serverless AWS microservices for real-time device monitoring so equipment issues surface before downtime; a React/Node.js shortcut workflow improved efficiency by \textbf{1200\%}.}
+    \resumeItem{Shipped an EULA compliance gate and standardized Agile CI/CD, cutting environment drift and the cost of broken releases across two terms.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Built Python APIs plus a JavaScript UI for guardrails and PII encryption, storing data in PostgreSQL and DynamoDB instead of scattered manual handling.}
+    \resumeItem{Raised test automation to \textbf{95\%} coverage, improving compliance by \textbf{20\%} and cutting production defects and time spent debugging client issues.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Turned Cassandra transaction data into a React view that \textbf{doubled} actionable insight and replaced repetitive manual analysis for operations teams.}
+    \resumeItem{Presented the system to \textbf{15+} project managers (\textbf{98\%} rating), helping teams catch performance risks before they became costly incidents.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Software Engineering Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Rebuilt a nonprofit food-assistance platform into React and PostgreSQL microservices, cutting query times by \textbf{60\%} during high-demand service.}
+    \resumeItem{Packaged delivery with Docker, reducing environment failures and the time required to onboard the next developers.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{Node.js, JavaScript, AWS, PostgreSQL, Gemini}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Built a customer-sentiment platform that runs AI voice surveys, scrapes social/search signals, and stores insights so support teams can see how customers feel without manual analysis.}
+    \resumeItem{Checked overall sentiment every five minutes against a \textbf{70\%} threshold and sent deduplicated alerts, flagging decline before preventable churn.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{React, FastAPI, WebSockets, MongoDB, MediaPipe}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Built a Figma plugin that turns live hand gestures into design actions, streaming roughly \textbf{60 FPS} events over WebSockets so users can move and edit frames without a mouse.}
+    \resumeItem{Debugged recognition thresholds across four architecture iterations so false triggers stopped breaking the product workflow.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:} Java, Python, JavaScript, C\#, Node.js, TypeScript, SQL \\
+    \textbf{Cloud \& Architecture:} AWS, Serverless, Lambda, DynamoDB, S3, microservices, REST APIs, CI/CD, Docker, Git/GitHub \\
+    \textbf{Engineering:} test automation, Agile, debugging, testing, data structures, algorithms, object-oriented design, Generative AI
+  }}
+\end{itemize}
+
+\end{document}

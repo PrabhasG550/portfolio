@@ -1,0 +1,146 @@
+% American Airlines -- UX Intern (Req 87871)
+% Digital Customer Experience / Employee Experience Design System
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2028}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Human--Computer Interaction, Software Engineering, Database Systems, Data Structures \& Algorithms, Computer Networks, Object-Oriented Design}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {ThirdSpaceDigital}{Jan. 2026 -- Present}
+    {Product Designer \& Frontend Developer}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Led UX from research through delivery: conducted user research and usability testing with early community members, then iterated Figma prototypes into a production React experience that reached \textbf{300} users in week one.}
+    \resumeItem{Built and maintained a reusable Figma design system---components, patterns, and documentation using Auto Layout, Variants, Tokens, and Component Properties---so article, event, issue, and archive surfaces stayed consistent across web and mobile (iOS/Android) breakpoints.}
+    \resumeItem{Established visual hierarchy and brand identity for the community platform; wrote clear usage guidelines and documentation so designers and developers could implement components correctly.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Partnered with product stakeholders in an Agile environment to define user stories and ship a React/Tailwind monitoring UI that cut repetitive operator steps; shortcut workflow improved efficiency by \textbf{1200\%}.}
+    \resumeItem{Prototyped and refined high-fidelity interface patterns for real-time controls, collecting stakeholder feedback and turning critiques into actionable design improvements across two terms.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Designed and built a React UI over Python/SQL services for guardrails and PII workflows; documented interaction patterns so client teams could adopt features with less support overhead.}
+    \resumeItem{Raised automated test coverage to \textbf{95\%} and improved compliance by \textbf{20\%}, treating quality gates as part of a trustworthy product experience.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Designed a React dashboard that clarified Cassandra metrics with strong visual hierarchy, \textbf{doubling} actionable insight; presented findings to \textbf{15+} managers (\textbf{98\%} rating).}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{Figma Plugin API, Auto Layout, Variants, React, FastAPI, MediaPipe}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Built a gesture-driven Figma plugin that streams roughly \textbf{60 FPS} hand tracking into design actions, extending how designers move and edit frames without leaving the canvas.}
+    \resumeItem{Standardized repeating interaction patterns across four architecture iterations; added accessible fallbacks and responsive breakpoints aligned with iOS and Android mobile UI conventions.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{Figma, FigJam, React, Next.js, PostgreSQL}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Mapped product flows in FigJam and Figma, then shipped a sentiment dashboard where clear visual hierarchy helped support teams prioritize churn risk from one interface.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{UX \& Design Systems:} Figma (Auto Layout, Variants, Tokens, Component Properties), design system, prototyping, visual hierarchy, brand identity, user research, usability testing, user stories, documentation, usage guidelines \\
+    \textbf{Product \& Platforms:} iOS/Android mobile UI patterns, accessibility, responsive design, FigJam, Agile, stakeholder communication \\
+    \textbf{Build:} React.js, Next.js, TypeScript, JavaScript, HTML/CSS, Tailwind CSS, Figma Plugin API
+  }}
+\end{itemize}
+
+\end{document}

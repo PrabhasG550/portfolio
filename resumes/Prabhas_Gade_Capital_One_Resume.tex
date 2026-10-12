@@ -1,0 +1,145 @@
+% Capital One Canada -- Associate Software Engineer, New Grad Card Expansion
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2027}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.49; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Software Engineering, Database Systems, Operating Systems, Linux/Unix, Data Structures \& Algorithms, Computer Networks}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Built and delivered React/Tailwind web experiences for an edge-computing RTU, integrating REST APIs and MySQL to support real-time monitoring and configuration for equipment operators.}
+    \resumeItem{Improved user efficiency by 1200\% through a shortcut-overview workflow; containerized the application and standardized CI/CD delivery to reduce deployment effort and environment drift.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Developed Python/FastAPI and PostgreSQL services plus a React interface for applications, LLM guardrails, and PII encryption, centralizing client compliance workflows.}
+    \resumeItem{Reached 95\% unit-test coverage with Cucumber, improving AI-engine compliance by 20\% while reducing production defects and time spent debugging client issues.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Built a React/Cassandra application that translated transaction and cluster metrics into actionable operational views, doubling insight output and reducing repetitive analysis.}
+    \resumeItem{Presented the solution to 15+ project managers and earned a 98\% performance rating, helping financial-technology stakeholders identify costly performance risks earlier.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Replatformed a nonprofit application from Svelte to React TypeScript and MongoDB to PostgreSQL/Prisma, cutting query times by 60\% for staff serving students.}
+    \resumeItem{Packaged the full stack with Docker, improving maintainability and creating a consistent delivery path that reduced environment-specific failures and onboarding effort.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{ThirdSpaceDigital} $|$ \emph{React, TypeScript, Supabase, Figma}}{2026}
+  \resumeItemListStart
+    \resumeItem{Designed and shipped a customer-focused media platform that attracted 300 users in its first week and sustained roughly 55 daily visits through responsive, iterative web experiences.}
+    \resumeItem{Unified articles, events, issues, and photo archives in reusable Supabase-backed workflows, reducing manual publishing and ongoing maintenance effort.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{Node.js, Express, PostgreSQL, Next.js, Gemini}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Developed an event-driven sentiment application with REST APIs, AI voice surveys, scheduled ingestion, alerts, and a resolution queue; five-minute checks surfaced customer risks for rapid follow-up.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:} JavaScript, TypeScript, Python, Java, SQL, C++, HTML/CSS \\
+    \textbf{Frameworks \& Data:} React.js, Next.js, Node.js, Express, FastAPI, REST APIs, PostgreSQL, MySQL, MongoDB, Cassandra \\
+    \textbf{Cloud \& Engineering:} AWS, Docker, CI/CD, Git/GitHub, Linux/Unix, Cucumber, Unit Testing, Figma
+  }}
+\end{itemize}
+
+\end{document}

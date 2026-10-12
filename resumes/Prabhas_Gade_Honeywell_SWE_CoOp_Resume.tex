@@ -1,0 +1,146 @@
+% Honeywell Software Engineer Co-Op
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2028}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Software Engineering, Database Systems, Operating Systems, Linux/Unix, Data Structures \& Algorithms, Advanced Algorithms, Computer Networks, Computer Vision}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Designed, developed, and tested React/Tailwind product features for an industrial edge-computing RTU, integrating REST APIs and MySQL for real-time equipment monitoring and configuration.}
+    \resumeItem{Translated compliance requirements into an EULA acceptance screen and operator needs into shortcut workflows, improving user efficiency by 1200\% while supporting reliable industrial operations.}
+    \resumeItem{Collaborated with engineers and cross-functional partners in an Agile delivery team; improved deployment infrastructure through Docker and CI/CD automation to reduce environment failures.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Developed Python/FastAPI and PostgreSQL services plus a React interface for applications, compliance guardrails, and PII encryption, improving security and maintainability of client workflows.}
+    \resumeItem{Expanded test automation to 95\% coverage with Cucumber, improving AI-engine compliance by 20\%; debugged failures and incorporated peer-review feedback to improve code quality.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Debugged Cassandra data and performance issues and built a React application that transformed transaction and cluster metrics into actionable operational views, doubling insight output.}
+    \resumeItem{Demoed the solution to 15+ project managers and earned a 98\% performance rating, communicating technical findings and incorporating stakeholder feedback.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Software Engineering Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Rebuilt a nonprofit application from Svelte in React/TypeScript and migrated MongoDB to PostgreSQL/Prisma, reducing query times by 60\%.}
+    \resumeItem{Packaged the full stack with Docker and documented repeatable deployment steps, improving software development processes, maintainability, and team onboarding.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{MudraDetection} $|$ \emph{Python, PyTorch, ONNX, TensorRT, NVIDIA Jetson}}{2025}
+  \resumeItemListStart
+    \resumeItem{Developed and tested an edge-computing vision application from data collection through hardware deployment; automated model evaluation using accuracy, precision, recall, and F1 metrics.}
+    \resumeItem{Troubleshot latency and classification issues and optimized ResNet-18 inference with ONNX/TensorRT, enabling responsive operation without cloud connectivity.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{React, FastAPI, WebSockets, MongoDB, MediaPipe}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Designed and demoed a real-time gesture product, iterating through four interaction revisions and debugging recognition thresholds to improve performance and usability.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages \& Frameworks:} Python, Java, C++, C\#, JavaScript, TypeScript, SQL, React, FastAPI, Node.js, REST APIs \\
+    \textbf{Testing \& Delivery:} Test Automation, Unit Testing, Cucumber, Code Review, Peer Review, Debugging, Troubleshooting, CI/CD, Docker, Git/GitHub \\
+    \textbf{Engineering:} Product Features, Infrastructure, Deployment, Agile Methodologies, Jira, MySQL, PostgreSQL, MongoDB, AWS, Google Cloud
+  }}
+\end{itemize}
+
+\end{document}

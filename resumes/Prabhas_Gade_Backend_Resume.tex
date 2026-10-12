@@ -1,0 +1,146 @@
+% Backend-focused resume (approximately 75% backend / 25% frontend)
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge\scshape Prabhas Gade}\\\vspace{1pt}
+  \small 832-759-3256 $|$
+  \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+  \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+  \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+  \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2027}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \vspace{-1pt}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Data Structures \& Algorithms, Advanced Algorithms, Computer Networks, Linux/Unix, Computer Architecture, Automata Theory}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Integrated REST services with MySQL persistence for an edge-computing RTU, enabling reliable real-time monitoring and configuration while reducing manual operator checks.}
+    \resumeItem{Containerized the application and standardized CI/CD orchestration, lowering deployment effort, environment drift, and the engineering cost of scaling installations across two internship terms.}
+    \resumeItem{Built React/Tailwind operational views that surfaced equipment statistics and controls in fewer interactions, improving user efficiency by 1200\% and helping technicians prevent costly downtime.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Developed FastAPI/PostgreSQL services for applications, policy guardrails, and PII encryption, centralizing compliance controls and reducing manual handling of sensitive customer data.}
+    \resumeItem{Reached 95\% unit-test coverage across LangChain guardrails and encryption flows with Cucumber, improving AI-engine compliance by 20\% and reducing production defects and time spent debugging client issues.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UTD EPICS Comet Cupboard}{Jan.--May 2024}
+    {Developer}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Migrated MongoDB to PostgreSQL/Prisma, cutting query times by 60\% and lowering staff wait time and infrastructure overhead for a nonprofit food-assistance platform.}
+    \resumeItem{Replatformed Svelte to React TypeScript and packaged with Docker, reducing framework fragmentation, environment failures, and future maintenance effort.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Queried and transformed Cassandra transaction and cluster metrics into analysis-ready data, replacing repetitive extraction and doubling actionable insight output.}
+    \resumeItem{Presented a React/CQL visualization to 15+ project managers and earned a 98\% performance rating, helping teams catch costly performance risks earlier.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{Node.js, Express, PostgreSQL, Gemini, Twilio, Next.js}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Engineered an event-driven pipeline that records AI voice surveys, transcribes audio, classifies sentiment, and persists actionable insights, automating analysis otherwise performed manually.}
+    \resumeItem{Consolidated hourly Reddit and daily Trends data in PostgreSQL; five-minute checks against a 70\% threshold triggered deduplicated alerts to reduce analyst effort and churn risk.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{FastAPI, WebSockets, MongoDB, MediaPipe, React}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Built a FastAPI/WebSocket event layer that streams roughly 60 FPS MediaPipe gesture data into Figma with low-latency updates, reducing repetitive design input.}
+    \resumeItem{Persisted frame state, gesture events, sessions, snapshots, and patch history in MongoDB, supporting reliable recovery and faster iteration across four gesture-map rewrites.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in,label={}]
+  \small{\item{
+    \textbf{Backend:} Python, Java, C++, SQL, FastAPI, Flask, Node.js, Express, REST APIs, WebSockets, LangChain \\
+    \textbf{Data \& Infrastructure:} PostgreSQL, MySQL, MongoDB, Cassandra, Prisma, Docker, AWS, CI/CD, Git/GitHub \\
+    \textbf{Frontend:} React.js, Next.js, TypeScript, JavaScript, HTML/CSS, Tailwind CSS
+  }}
+\end{itemize}
+
+\end{document}
