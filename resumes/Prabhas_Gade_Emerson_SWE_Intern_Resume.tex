@@ -1,0 +1,145 @@
+% Emerson -- Software Engineering Intern
+% Vinson Process Controls framed as Emerson Impact Partner
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2028}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Software Engineering, Operating Systems, Linux/Unix, Database Systems, Data Structures \& Algorithms, Computer Networks}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls (Emerson Impact Partner)}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern --- process automation}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Built React/Node.js tools and diagnostics for an edge-computing RTU (REST, MySQL) that streamline software troubleshooting by surfacing equipment faults before downtime across two internship terms.}
+    \resumeItem{Improved operator efficiency by \textbf{1200\%} with a shortcut-overview that applied technology to business problems in day-to-day monitoring; refined user experience so status and controls took fewer interactions.}
+    \resumeItem{Automated release packaging with Docker and CI/CD in an Agile team, cutting environment drift and the cost of broken handoffs during investigations and deploy cycles.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Applied technology to business problems by building Python/FastAPI services and a React UI for LLM guardrails and PII encryption on PostgreSQL and DynamoDB, replacing scattered manual handling of client data.}
+    \resumeItem{Drove software troubleshooting and problem solving with automated tests to \textbf{95\%} coverage, improving compliance by \textbf{20\%} and cutting defects that escaped into client environments.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Debugged Cassandra transaction and cluster metrics, then shipped a React reporting view that \textbf{doubled} actionable insight versus repetitive manual analysis.}
+    \resumeItem{Presented reporting findings to \textbf{15+} project managers (\textbf{98\%} rating), turning investigation results into decisions before performance risks escalated.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {ThirdSpaceDigital}{Jan. 2026 -- Present}
+    {Software Engineer \& Product Designer}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Drove business growth with an end-to-end React/Supabase publishing platform: \textbf{300} users in week one and roughly \textbf{55} daily visits sustained for months; iterated user experience after launch.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{Node.js, Python, PostgreSQL, Gemini}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Built process automation for customer-sentiment investigations: five-minute checks against a \textbf{70\%} threshold, deduplicated alerts, and reporting that flags decline before preventable churn.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{React, FastAPI, WebSockets, MediaPipe}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Applied problem solving across four architecture iterations of a Figma plugin that streams roughly \textbf{60 FPS} gesture events, debugging false triggers until the live workflow stayed stable.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:} Java, Python, JavaScript, TypeScript, SQL, C++, Node.js \\
+    \textbf{Engineering:} process automation, software troubleshooting, diagnostics \& utilities, reporting, problem solving, efficiency, user experience, technology to business problems, business growth \\
+    \textbf{Tools:} Docker, CI/CD, Agile, Git/GitHub, AWS, React, MySQL, PostgreSQL, Linux/Unix
+  }}
+\end{itemize}
+
+\end{document}
