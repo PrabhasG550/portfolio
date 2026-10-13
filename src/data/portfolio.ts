@@ -122,7 +122,7 @@ export const portfolioProjects: ProjectEntry[] = [
       {
         slug: 'sunyata',
         title: 'शून्यता (Śūnyatā)',
-        disciplines: ['art', 'technology'],
+        disciplines: ['art'],
         useTechnologyPresentation: true,
         disableThumbnailShellTheme: true,
         summary:
