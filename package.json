@@ -11,6 +11,7 @@
     "sync:raindancing": "node scripts/syncRainDancing.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.38.0",
     "matter-js": "^0.20.0",
     "react": "^19.2.4",

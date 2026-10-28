@@ -478,6 +478,123 @@ export const portfolioProjects: ProjectEntry[] = [
         ],
       },
       {
+        slug: 'glairsite',
+        title: 'Glair Artist Site',
+        disciplines: ['art', 'technology', 'media'],
+        useTechnologyPresentation: true,
+        disableThumbnailShellTheme: true,
+        summary:
+          'Artist site for GLAIR: a black-and-white catalog of releases and videos with an Om-masked intro, cover-flash navigation, and a click-to-play bar that runs Spotify previews through a live frequency visualizer.',
+        year: '2026',
+        tags: ['React', 'Vite', 'Web Audio', 'SoundCloud', 'YouTube'],
+        externalLinks: [
+          { label: 'See Site Here', href: 'https://glairsite.vercel.app/' },
+        ],
+        thumbnailSrc:
+          'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1793171355/portfolio/GLAIR/thumbnail.png',
+        videoSrc:
+          'https://res.cloudinary.com/ddcf7lxh1/video/upload/q_auto/v1793171351/portfolio/GLAIR/glair-intro.mp4',
+        artwork:
+          'linear-gradient(145deg, #f4f4f4 0%, #e8e8e8 42%, #ffffff 100%), radial-gradient(circle at 18% 22%, rgba(0,0,0,0.06), transparent 34%), radial-gradient(circle at 78% 70%, rgba(0,0,0,0.05), transparent 30%)',
+        detailSections: [
+          {
+            heading: 'Initial planning',
+            paragraphs: [
+              'The notebook sketch is by the artist Glair himself. The needs list and early wireframes came after talking with him about how a site could fit his work—bookings and production inquiries through contact, video drops, socials, and room later for merch—while keeping the Om and world-building language he’d already drawn.',
+            ],
+            galleries: [
+              {
+                layout: 'stack',
+                showCaptions: true,
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1793171639/portfolio/GLAIR/planning.png',
+                    caption:
+                      'Planning board: Glair’s sketch, needs from our conversation, and early desktop/mobile wireframes',
+                    media: 'image',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            heading: 'What it is',
+            paragraphs: [
+              'The Glair Artist Site is the official web surface for GLAIR—music catalog, video archive, contact, and stubs for tickets and shop. The design stays almost entirely black type on white paper (Ubuntu Mono), so motion and cover art carry the personality instead of chrome.',
+              'The home route opens on music. Releases are listed with tracklists and deep links out to SoundCloud, Apple Music, Spotify, and Untitled where they exist. Video embeds the latest YouTube drop and expands older clips in place; contact is a booking-forward form with Instagram as a secondary path.',
+            ],
+            galleries: [
+              {
+                layout: 'stack',
+                showCaptions: true,
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1793171640/portfolio/GLAIR/video-page.png',
+                    caption: 'Video tab: latest embed plus expandable archive list',
+                    media: 'image',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1793171641/portfolio/GLAIR/contact-page.png',
+                    caption: 'Contact tab: from / subject / message form for bookings and production',
+                    media: 'image',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            heading: 'Intro',
+            paragraphs: [
+              'First visit opens on tempered glass: the Om fades in with blur and a frosted pane, then release covers flash inside the mask before the glyph shrinks into the sticky bar mark. Session storage keeps the animation from repeating on every navigation.',
+            ],
+            galleries: [
+              {
+                layout: 'stack',
+                showCaptions: true,
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/video/upload/q_auto/v1793171351/portfolio/GLAIR/glair-intro.mp4',
+                    caption: 'Tempered-glass Om intro, settle into the bar, then nav cover-flash on hover',
+                    media: 'video',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            heading: 'Bar & playback',
+            paragraphs: [
+              'Hovering the Om cycles album covers through the same mask; clicking it starts a random Spotify preview, fades the track title in, and drives a canvas frequency visualizer across the bar. Nav links get the same cover-flash treatment under the cursor.',
+              'Web Audio API (AnalyserNode + GainNode) handles the viz and soft stop. Tickets and shop stay “in progress” placeholders until those surfaces are ready.',
+            ],
+            galleries: [
+              {
+                layout: 'stack',
+                showCaptions: true,
+                images: [
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/video/upload/q_auto/v1793169791/portfolio/GLAIR/glair-music.mp4',
+                    caption: 'Cover cycle, track title, and bar visualizer while a preview plays',
+                    media: 'video',
+                  },
+                  {
+                    src: 'https://res.cloudinary.com/ddcf7lxh1/image/upload/f_auto,q_auto/v1793169816/portfolio/GLAIR/music-still.png',
+                    caption: 'Music catalog with GOWTHAMA and singles',
+                    media: 'image',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            heading: 'Build',
+            paragraphs: [
+              'React + Vite + React Router. Release and video data live as typed JS modules; covers pull from Apple Music artwork where available. Contact posts through FormSubmit to glairmgmt@gmail.com with a honeypot field.',
+            ],
+          },
+        ],
+      },
+      {
         slug: 'tmoodbile',
         title: 'T-Moodbile',
         navCategory: 'in-progress',
