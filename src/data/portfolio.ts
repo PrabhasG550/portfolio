@@ -1324,7 +1324,7 @@ export const portfolioInfoSections: InformationSection[] = [
     label: 'Experience',
     headingSize: 'caption',
     paragraphs: [
-      'Software Engineering Intern\nVinson Process Controls, Richardson, TX\nMay 2025 → Aug 2025',
+      'Software Engineering Intern\nVinson Process Controls, Richardson, TX\nMay 2025 → Aug 2025; May 2026 → Aug 2026',
       'Software Intern\nAdventurefy, Richardson, TX\nJan 2025 → Mar 2025',
       'Frontend Developer\nNextCreator, Dallas, TX\nJun 2024 → Sep 2024',
       'Software Engineering Intern\nCodeaify, Dallas, TX\nJun 2024 → Aug 2024',
