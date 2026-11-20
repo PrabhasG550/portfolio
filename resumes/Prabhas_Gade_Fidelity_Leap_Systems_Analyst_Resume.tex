@@ -1,0 +1,145 @@
+% Fidelity Leap Program -- Systems Analyst (starts July 12, 2027)
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Prabhas Gade} \\ \vspace{1pt}
+    \small 832-759-3256 $|$ \href{mailto:prabhasgade333@gmail.com}{\underline{prabhasgade333@gmail.com}} $|$
+    \href{https://linkedin.com/in/prabhasgade}{\underline{linkedin.com/in/prabhasgade}} $|$
+    \href{https://github.com/PrabhasG550}{\underline{github.com/PrabhasG550}} $|$
+    \href{https://studiorain.xyz}{\underline{studiorain.xyz}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Texas at Dallas}{May 2027}
+    {B.S. Computer Science, Minor in Visual Arts; GPA: 3.5; Academic Excellence Scholarship}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{\textbf{Coursework:} Software Engineering, Database Systems, Data Structures \& Algorithms, Operating Systems, Computer Networks, Object-Oriented Design}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Vinson Process Controls}{May--Aug. 2025; May--Aug. 2026}
+    {Software Engineering Intern}{Richardson, TX}
+  \resumeItemListStart
+    \resumeItem{Participated in stakeholder discussions with operators and Technology Leaders, gathering requirements and clarifying ambiguities before translating them into monitoring workflows that surfaced faults before downtime.}
+    \resumeItem{Documented user stories, acceptance criteria, and process flows for a high-friction workflow redesign; a React/Node.js shortcut improved efficiency by \textbf{1200\%} across two Agile internship terms.}
+    \resumeItem{Mapped system workflows and upstream/downstream dependencies across edge monitoring services; supported testing by validating behavior and logging defects before promote-to-production.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Codeaify}{Jun.--Aug. 2024}
+    {Software Engineering Intern}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Performed systems analysis on compliance gaps, then wrote functional specifications and verification documentation for Python/SQL services handling guardrails and PII encryption.}
+    \resumeItem{Supported data validation and software troubleshooting with automated test cases to \textbf{95\%} coverage, improving compliance by \textbf{20\%} and cutting defects that escaped to clients.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {JPMorgan Chase}{Jun.--Aug. 2023}
+    {Software Engineering Intern}{Houston, TX}
+  \resumeItemListStart
+    \resumeItem{Ran data analysis queries against Cassandra transaction and cluster metrics, then shipped a React reporting view that \textbf{doubled} actionable insight versus manual review.}
+    \resumeItem{Presented analysis findings to \textbf{15+} project managers (\textbf{98\%} rating), connecting business context to system issues before escalations grew.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {ThirdSpaceDigital}{Jan. 2026 -- Present}
+    {Software Engineer \& Product Designer}{Dallas, TX}
+  \resumeItemListStart
+    \resumeItem{Captured product requirements for a public publishing platform and maintained documentation through delivery; drove \textbf{300} users in week one and roughly \textbf{55} daily visits after launch.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{T-Moodbile} $|$ \emph{Python, SQL, FigJam, Draw.io, Power BI, PostgreSQL, Gemini}}{Nov. 2025}
+  \resumeItemListStart
+    \resumeItem{Modeled process and data flow diagrams in FigJam and Draw.io for a sentiment platform; ran SQL queries and validated alert data against a \textbf{70\%} threshold before preventable churn.}
+    \resumeItem{Created acceptance criteria for monitoring and reporting jobs; used Generative AI tools responsibly with human review before acting on investigation signals.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Tactile} $|$ \emph{React, FastAPI, systems analysis, MediaPipe}}{Jan. 2026}
+  \resumeItemListStart
+    \resumeItem{Broke down an ambiguous interaction problem across four architecture iterations; documented root causes and design options until false triggers stopped interrupting a live \textbf{60 FPS} workflow.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Systems Analysis:} requirements gathering, requirements analysis, user stories, functional specifications, acceptance criteria, stakeholder communication, documentation, Agile \\
+    \textbf{Data \& Diagrams:} SQL queries, data validation, data flows, process flow diagrams, FigJam, Draw.io, Power BI, Excel, reporting \\
+    \textbf{Delivery:} test cases, defect logging, software troubleshooting, analytical thinking, problem solving, Generative AI tools, Python, JavaScript, React, PostgreSQL
+  }}
+\end{itemize}
+
+\end{document}
